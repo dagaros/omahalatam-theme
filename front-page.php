@@ -23,7 +23,31 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $jt_static_home = get_template_directory() . '/front-page.html';
 
 if ( file_exists( $jt_static_home ) ) {
-	readfile( $jt_static_home );
+
+	$jt_html = file_get_contents( $jt_static_home );
+
+	/**
+	 * Sección "Contenido": las 3 tarjetas salen de las últimas entradas.
+	 *
+	 * El HTML entre <!-- jt:ultimas-entradas --> y su cierre se sustituye por
+	 * tarjetas generadas desde la base de datos, con el mismo marcado del
+	 * diseño. Si faltan los marcadores o no hay entradas publicadas, el
+	 * archivo se sirve tal cual y quedan las tarjetas estáticas.
+	 */
+	$jt_ini = '<!-- jt:ultimas-entradas -->';
+	$jt_fin = '<!-- /jt:ultimas-entradas -->';
+	$jt_a   = strpos( $jt_html, $jt_ini );
+	$jt_b   = strpos( $jt_html, $jt_fin );
+
+	if ( false !== $jt_a && false !== $jt_b && $jt_b > $jt_a ) {
+		$jt_cards = jt_front_page_cards( 3 );
+		if ( $jt_cards ) {
+			$jt_a += strlen( $jt_ini );
+			$jt_html = substr( $jt_html, 0, $jt_a ) . $jt_cards . substr( $jt_html, $jt_b );
+		}
+	}
+
+	echo $jt_html; // phpcs:ignore WordPress.Security.EscapeOutput — export estático propio del tema.
 	exit;
 }
 

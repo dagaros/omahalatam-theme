@@ -84,6 +84,61 @@ function jt_primary_cat( $id = null ) {
 }
 
 /**
+ * Tarjetas de las últimas entradas para la sección "Contenido" de la portada.
+ *
+ * Reproduce EXACTAMENTE el marcado de las tarjetas del export estático: mismos
+ * estilos, mismo marcador de vídeo, mismo badge. Lo único que cambia es que los
+ * datos salen de la base de datos en vez de estar escritos a mano.
+ *
+ * Si no hay entradas publicadas devuelve cadena vacía y front-page.php deja
+ * las tarjetas estáticas intactas.
+ *
+ * @param int $cantidad Número de tarjetas.
+ * @return string HTML, o '' si no hay entradas.
+ */
+function jt_front_page_cards( $cantidad = 3 ) {
+
+	$q = new WP_Query( array(
+		'posts_per_page'      => (int) $cantidad,
+		'post_status'         => 'publish',
+		'ignore_sticky_posts' => true,
+		'no_found_rows'       => true,
+	) );
+
+	if ( ! $q->have_posts() ) {
+		wp_reset_postdata();
+		return '';
+	}
+
+	$out = '';
+
+	while ( $q->have_posts() ) : $q->the_post();
+
+		$cat   = jt_primary_cat();
+		$fecha = strtoupper( get_the_date( 'd M Y' ) );
+
+		$out .= '
+      <article data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
+        <div style="aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 12px,#0f0f11 12px 24px);position:relative;display:grid;place-items:center;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.08),transparent 60%);"></div>
+          <div style="position:relative;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px;">&#9654;</div>
+          <div style="position:absolute;bottom:10px;right:10px;font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:#9AA0AA;background:rgba(0,0,0,0.6);padding:3px 7px;border-radius:5px;">' . esc_html( $cat ) . '</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:1px;color:#7A808A;margin-bottom:9px;">' . esc_html( $fecha ) . '</div>
+          <h3 style="margin:0 0 16px;font-size:17px;font-weight:600;line-height:1.35;color:#fff;">' . esc_html( get_the_title() ) . '</h3>
+          <a href="' . esc_url( get_permalink() ) . '" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#E7C877;">Ver an&aacute;lisis <span>&rarr;</span></a>
+        </div>
+      </article>';
+
+	endwhile;
+
+	wp_reset_postdata();
+
+	return $out . "\n    ";
+}
+
+/**
  * Anclas de las secciones de la portada.
  *
  * La portada (front-page.html) numera sus secciones s2…s6. Este mapa traduce
