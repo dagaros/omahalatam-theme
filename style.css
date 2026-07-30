@@ -1,10 +1,30 @@
 /*
-Theme Name: Jhontra PLO5
-Theme URI: https://omahalatam.com
-Author: Jhontra
-Author URI: https://omahalatam.com
-Description: Custom theme for OmahaLatam - PLO5 Poker Authority in Latin America
-Version: 1.0.0
-License: GNU General Public License v2 or later
+Theme Name:  Jhontra PLO5
+Theme URI:   https://omahalatam.com
+Author:      Jhontra
+Author URI:  https://omahalatam.com
+Description: Tema a medida para OmahaLatam — la autoridad de Omaha 5 Cartas (PLO5) en Latinoamérica. Dark mode premium, blog editorial y embudo de afiliación a Suprema y PPPoker.
+Version:     2.1.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License:     GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: jhontra-theme
+Tags:        dark, blog, custom-colors, custom-logo, custom-menu, featured-images, translation-ready
 */
+
+/*
+ * ESTE ARCHIVO NO CARGA ESTILOS.
+ *
+ * WordPress solo lo lee para sacar los metadatos de arriba. El CSS real vive en
+ * /assets/css y se encola desde inc/enqueue.php EN ESTE ORDEN EXACTO:
+ *
+ *   1. base.css    reset, tokens, tipografia, utilidades, botones
+ *   2. layout.css  nav, logo, age gate, breadcrumbs, banda CTA, footer, FAB
+ *   3. blog.css    archivo, buscador, grid, sidebar, post individual
+ *   4. motion.css  prefers-reduced-motion  ← SIEMPRE de ultimo
+ *
+ * Cambiar ese orden rompe la cascada y con ella el diseno aprobado.
+ * La portada (front-page.html) no usa nada de esto: lleva su CSS embebido.
+ */

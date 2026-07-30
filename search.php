@@ -1,7 +1,7 @@
 <?php
 /**
- * Listado del blog (/blog/).
- * Comparte layout con el archivo de categorías y la búsqueda.
+ * Resultados de búsqueda.
+ * Reutiliza el layout del archivo (archive.php ya contempla is_search()).
  *
  * @package jhontra-theme
  */

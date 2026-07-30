@@ -1,7 +1,14 @@
 <?php
 /**
- * Blog archive — Faithful to Claude Design export.
- * Featured post + grid + sidebar (Suprema, categories, recent, PPPoker, ad).
+ * Archivo del blog — listado de /blog/, categorías y búsqueda.
+ *
+ * Estructura: hero + barra de categorías + post destacado + grid + sidebar.
+ * La tarjeta vive en template-parts/card-post.php y el sidebar en
+ * template-parts/sidebar-blog.php.
+ *
+ * Lo usan también home.php y search.php vía require.
+ *
+ * @package jhontra-theme
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
@@ -63,8 +70,7 @@ if ( ! empty( $categories ) ) : ?>
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
         if ( $paged === 1 && ! is_category() && ! is_search() ) :
           the_post();
-          $fcats = get_the_category();
-          $fcat  = ! empty($fcats) ? strtoupper($fcats[0]->name) : 'BLOG';
+          $fcat = jt_primary_cat();
         ?>
         <article class="jt-feat" data-reveal>
           <a href="<?php the_permalink(); ?>" class="jt-feat__link">
@@ -93,32 +99,8 @@ if ( ! empty( $categories ) ) : ?>
         <!-- Post grid -->
         <div class="jt-post-grid" data-post-grid>
           <?php while ( have_posts() ) : the_post();
-            $pcats = get_the_category();
-            $pcat  = ! empty($pcats) ? strtoupper($pcats[0]->name) : 'BLOG';
-          ?>
-          <article class="jt-card" data-reveal>
-            <a href="<?php the_permalink(); ?>" class="jt-card__link">
-              <div class="jt-card__img">
-                <?php if ( has_post_thumbnail() ) : ?>
-                  <?php the_post_thumbnail( 'jt-card' ); ?>
-                <?php else : ?>
-                  <div class="jt-card__placeholder">♠</div>
-                <?php endif; ?>
-                <span class="jt-card__badge"><?php echo esc_html( $pcat ); ?></span>
-              </div>
-              <div class="jt-card__body">
-                <div class="jt-card__meta">
-                  <span><?php echo strtoupper( get_the_date('d M Y') ); ?></span>
-                  <span class="jt-dot"></span>
-                  <span><?php echo jt_reading_time(); ?></span>
-                </div>
-                <h3><?php the_title(); ?></h3>
-                <p><?php echo get_the_excerpt(); ?></p>
-                <span class="jt-card__cta">Leer más <span>→</span></span>
-              </div>
-            </a>
-          </article>
-          <?php endwhile; ?>
+            get_template_part( 'template-parts/card', 'post' );
+          endwhile; ?>
         </div>
 
         <!-- Pagination -->
@@ -140,64 +122,7 @@ if ( ! empty( $categories ) ) : ?>
     </main>
 
     <!-- Sidebar -->
-    <aside class="jt-sidebar">
-      <!-- Suprema CTA -->
-      <div class="jt-aff" data-reveal>
-        <div class="jt-aff__glow"></div>
-        <span class="jt-sidebar__label">Sala afiliada</span>
-        <div class="jt-aff__name">Suprema Poker</div>
-        <p>El club con más tráfico de PLO5 en LATAM. Únete con el código de Jhontra y accede a las mejores condiciones.</p>
-        <div class="jt-aff__perk"><span>★</span>Mejor bono de bienvenida</div>
-        <a href="https://wa.me/573107114689" class="jt-btn-gold jt-btn-sweep jt-btn-sm jt-btn-full" target="_blank" rel="noopener">Ver mi bono</a>
-      </div>
-
-      <!-- Categories -->
-      <div class="jt-sidebar-widget" data-reveal>
-        <div class="jt-sidebar__heading">Categorías</div>
-        <?php
-        $all_cats = get_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'hide_empty' => true ) );
-        foreach ( $all_cats as $acat ) : ?>
-          <a href="<?php echo esc_url( get_category_link( $acat->term_id ) ); ?>" class="jt-sidebar-widget__item">
-            <span><?php echo esc_html( $acat->name ); ?></span>
-            <span class="jt-sidebar-widget__count"><?php echo $acat->count; ?></span>
-          </a>
-        <?php endforeach; ?>
-      </div>
-
-      <!-- Recent posts -->
-      <div class="jt-sidebar-widget" data-reveal>
-        <div class="jt-sidebar__heading">Lo más reciente</div>
-        <div class="jt-recent">
-          <?php
-          $recent = new WP_Query( array( 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC' ) );
-          while ( $recent->have_posts() ) : $recent->the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="jt-recent__item">
-              <div class="jt-recent__thumb">
-                <?php if ( has_post_thumbnail() ) the_post_thumbnail( 'jt-thumb' ); ?>
-              </div>
-              <div>
-                <div class="jt-recent__date"><?php echo strtoupper( get_the_date('d M Y') ); ?></div>
-                <div class="jt-recent__title"><?php the_title(); ?></div>
-              </div>
-            </a>
-          <?php endwhile; wp_reset_postdata(); ?>
-        </div>
-      </div>
-
-      <!-- PPPoker CTA -->
-      <div class="jt-aff jt-aff--secondary" data-reveal>
-        <span class="jt-sidebar__label">Sala afiliada</span>
-        <div class="jt-aff__name">PPPoker</div>
-        <p>Mesas activas 24/7 y bono de bienvenida para nuevos jugadores del club.</p>
-        <a href="https://wa.me/573107114689" class="jt-btn-outline jt-btn-full" target="_blank" rel="noopener">Ver promoción</a>
-      </div>
-
-      <!-- Ad slot -->
-      <div class="jt-ad-slot">
-        <div class="jt-ad-slot__label">ESPACIO PUBLICITARIO · 300×250</div>
-        <div class="jt-ad-slot__desc">Banner de sala afiliada (widget WordPress)</div>
-      </div>
-    </aside>
+    <?php get_template_part( 'template-parts/sidebar', 'blog' ); ?>
 
   </div>
 </div>

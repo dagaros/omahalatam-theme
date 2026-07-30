@@ -1,7 +1,14 @@
 <?php
 /**
- * Single post — Faithful to Claude Design export.
- * Progress bar, TOC sidebar, author bio, share, tags, inline CTA, related.
+ * Post individual.
+ *
+ * Barra de progreso, TOC lateral, CTA in-content, etiquetas, compartir,
+ * bio del autor y relacionados.
+ *
+ * El script del TOC vive en assets/js/single-toc.js (se encola desde
+ * inc/enqueue.php solo en is_single()).
+ *
+ * @package jhontra-theme
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
@@ -68,7 +75,7 @@ $tags     = get_the_tags();
             <h3>Únete a los clubes de Jhontra en Suprema y PPPoker</h3>
             <p>Rakeback competitivo, material de estudio exclusivo y una comunidad activa que juega, estudia y gana en equipo.</p>
             <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-              <a href="https://wa.me/573107114689" class="jt-btn-gold jt-btn-sweep" style="padding:15px 28px;border-radius:13px;font-size:15.5px;" target="_blank" rel="noopener"><span>✆</span> Registrarme con Jhontra</a>
+              <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-btn-gold jt-btn-sweep" style="padding:15px 28px;border-radius:13px;font-size:15.5px;" target="_blank" rel="noopener"><span>✆</span> Registrarme con Jhontra</a>
               <a href="<?php echo esc_url( home_url('/#clubes') ); ?>" class="jt-btn-ghost" style="padding:15px 24px;border-radius:13px;font-size:15.5px;">Ver clubes asociados</a>
             </div>
           </div>
@@ -102,7 +109,7 @@ $tags     = get_the_tags();
             <div class="jt-author-bio__label">Sobre el autor</div>
             <div class="jt-author-bio__name">Jhontra</div>
             <p>Coach y jugador profesional de Omaha 5 Cartas, referente del PLO5 en Latinoamérica. Enseña a ganar con matemática, disciplina y gestión de bankroll.</p>
-            <a href="https://wa.me/573107114689" target="_blank" rel="noopener">Entrenar con Jhontra <span>→</span></a>
+            <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" target="_blank" rel="noopener">Entrenar con Jhontra <span>→</span></a>
           </div>
         </div>
       </div>
@@ -121,7 +128,7 @@ $tags     = get_the_tags();
           <span class="jt-sidebar__label">Sala afiliada</span>
           <div class="jt-aff__name" style="font-size:24px;">Suprema Poker</div>
           <div class="jt-aff__perk" style="font-size:18px;"><span style="font-size:20px;">★</span>Mejor bono de bienvenida</div>
-          <a href="https://wa.me/573107114689" class="jt-btn-gold jt-btn-sweep jt-btn-sm jt-btn-full" target="_blank" rel="noopener">Ver mi bono</a>
+          <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-btn-gold jt-btn-sweep jt-btn-sm jt-btn-full" target="_blank" rel="noopener">Ver mi bono</a>
         </div>
 
         <!-- Ad slot -->
@@ -151,50 +158,12 @@ if ( $related->have_posts() ) : ?>
     </div>
     <div class="jt-related__grid" data-related-grid>
       <?php while ( $related->have_posts() ) : $related->the_post();
-        $rcats = get_the_category();
-        $rcat  = ! empty($rcats) ? strtoupper($rcats[0]->name) : 'BLOG';
-      ?>
-      <article>
-        <a href="<?php the_permalink(); ?>" class="jt-card__link">
-          <div class="jt-card__img">
-            <?php if ( has_post_thumbnail() ) : ?>
-              <?php the_post_thumbnail( 'jt-card' ); ?>
-            <?php endif; ?>
-            <span class="jt-card__badge"><?php echo esc_html( $rcat ); ?></span>
-          </div>
-          <div class="jt-card__body">
-            <div class="jt-card__meta">
-              <span><?php echo strtoupper( get_the_date('d M Y') ); ?></span>
-              <span class="jt-dot"></span>
-              <span><?php echo jt_reading_time(); ?></span>
-            </div>
-            <h3 style="font-size:18px;"><?php the_title(); ?></h3>
-          </div>
-        </a>
-      </article>
-      <?php endwhile; wp_reset_postdata(); ?>
+        get_template_part( 'template-parts/card', 'post', array( 'variant' => 'compact' ) );
+      endwhile; wp_reset_postdata(); ?>
     </div>
   </div>
 </section>
 <?php endif; ?>
 
-<!-- TOC auto-generation script -->
-<script>
-(function(){
-  var prose = document.querySelector('.jt-prose');
-  var nav = document.getElementById('jt-toc-nav');
-  if(!prose || !nav) return;
-  var h2s = prose.querySelectorAll('h2');
-  if(!h2s.length) { var tw = document.querySelector('[data-toc-wrap]'); if(tw) tw.style.display='none'; return; }
-  h2s.forEach(function(h,i){
-    var id = 's-' + (i+1);
-    h.id = id;
-    var a = document.createElement('a');
-    a.href = '#' + id;
-    a.textContent = h.textContent;
-    nav.appendChild(a);
-  });
-})();
-</script>
 
 <?php get_footer(); ?>

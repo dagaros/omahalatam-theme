@@ -1,0 +1,38 @@
+/**
+ * Jhontra PLO5 — base.css
+ * Reset, tokens de color/tipografia, utilidades y botones.
+ * Paleta: #0B0B0C fondo · #D4AF54 oro · #E7C877 oro claro · #00E676 whatsapp
+ * NO MODIFICAR VALORES: extraido 1:1 del export de diseno aprobado.
+ */
+
+/* ── Base ─────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B0B0C;color:#E2E8F0;font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#E7C877;text-decoration:none}
+a:hover{color:#F5E4A8}
+::selection{background:rgba(212,175,84,0.3);color:#fff}
+:focus-visible{outline:2px solid #E7C877;outline-offset:3px;border-radius:3px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#0B0B0C}
+::-webkit-scrollbar-thumb{background:#26262b;border-radius:8px}
+img{max-width:100%;height:auto;display:block}
+
+@keyframes jt-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.5)}50%{box-shadow:0 0 0 14px rgba(0,230,118,0)}}
+@keyframes jt-sweep{0%{transform:skewX(-18deg) translateX(-280%)}55%,100%{transform:skewX(-18deg) translateX(360%)}}
+
+/* ── Utility ──────────────────────────────────── */
+.jt-gold{color:#E7C877;font-weight:800}
+.jt-mono{font-family:'IBM Plex Mono',monospace}
+.jt-pill{display:inline-flex;align-items:center;gap:9px;padding:6px 14px;border:1px solid rgba(212,175,84,0.28);background:rgba(212,175,84,0.06);border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:#F5E4A8;margin-bottom:20px}
+.jt-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:#D4AF54;box-shadow:0 0 10px #D4AF54}
+.jt-container{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* ── Buttons ──────────────────────────────────── */
+.jt-btn-gold{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;background:#D4AF54;color:#2A2005;padding:16px 30px;border-radius:14px;font-weight:800;font-size:16px;border:none;cursor:pointer}
+.jt-btn-gold:hover{background:#E7C877;color:#2A2005}
+.jt-btn-sweep::after{content:'';position:absolute;top:0;left:-30%;width:42%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,0.5),transparent);animation:jt-sweep 4.6s ease-in-out infinite;pointer-events:none}
+.jt-btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:16px 28px;border-radius:14px;border:1px solid rgba(255,255,255,0.16);color:#E2E8F0;font-weight:700;font-size:16px}
+.jt-btn-ghost:hover{border-color:rgba(212,175,84,0.5);color:#F5E4A8}
+.jt-btn-sm{padding:14px;border-radius:12px;font-size:14.5px}
+.jt-btn-full{width:100%;justify-content:center}

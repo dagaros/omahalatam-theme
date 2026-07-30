@@ -1,11 +1,17 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php
+/**
+ * Header global: age gate 18+, nav sticky con logo J♠ y menú móvil.
+ * El JS de comportamiento está en assets/js/theme.js.
+ *
+ * @package jhontra-theme
+ */
+if ( ! defined( 'ABSPATH' ) ) exit;
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -55,7 +61,7 @@
 
     <!-- Actions -->
     <div class="jt-nav__actions">
-      <a href="https://wa.me/573107114689" class="jt-nav__cta" id="jt-desktop-cta" target="_blank" rel="noopener">
+      <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__cta" id="jt-desktop-cta" target="_blank" rel="noopener">
         <span>✆</span> WhatsApp
       </a>
       <button type="button" id="jt-mobile-btn" class="jt-nav__hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -69,7 +75,7 @@
     <a href="<?php echo esc_url( home_url('/#clubes') ); ?>">Clubes</a>
     <a href="<?php echo esc_url( home_url('/blog/') ); ?>" <?php if ( is_home() || is_archive() || is_single() ) echo 'class="jt-nav__active"'; ?>>Blog / Noticias</a>
     <a href="<?php echo esc_url( home_url('/#contacto') ); ?>">Contacto</a>
-    <a href="https://wa.me/573107114689" class="jt-nav__mobile-cta" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__mobile-cta" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
   </div>
 </header>
 

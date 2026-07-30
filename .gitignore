@@ -1,0 +1,36 @@
+# ── Sistema ─────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# ── Editores ────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-*
+
+# ── Dependencias y builds ───────────────────────
+node_modules/
+vendor/
+*.log
+
+# ── WordPress: nunca versionar ──────────────────
+wp-config.php
+wp-content/uploads/
+*.sql
+*.sql.gz
+
+# ── Credenciales ────────────────────────────────
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+
+# ── Copias y temporales ─────────────────────────
+*.bak
+*.orig
+*.rej
+/backup/
+/_tmp/

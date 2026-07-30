@@ -1,20 +1,39 @@
 <?php
+/**
+ * Plantilla de respaldo de la jerarquía de WordPress.
+ *
+ * En la práctica casi nunca se usa: la portada la resuelve front-page.php,
+ * el listado del blog home.php / archive.php, el post single.php, las páginas
+ * page.php, la búsqueda search.php y los errores 404.php.
+ *
+ * @package jhontra-theme
+ */
+
 if ( ! defined( 'ABSPATH' ) ) exit;
-if ( is_front_page() ) {
-    $html = get_template_directory() . '/front-page.html';
-    if ( file_exists( $html ) ) { readfile( $html ); exit; }
-    get_header();
-    echo '<div style="max-width:820px;margin:0 auto;padding:120px 24px 80px;text-align:center;">';
-    echo '<div style="font-family:Bricolage Grotesque,sans-serif;font-size:48px;font-weight:800;color:#D4AF54;margin-bottom:16px;">Jhontra</div>';
-    echo '<p style="color:#9AA0AA;font-size:17px;">Sitio en construcción. Visita el <a href="' . esc_url( home_url('/blog/') ) . '">blog</a>.</p>';
-    echo '</div>';
-    get_footer();
-} else {
-    get_header();
-    if ( have_posts() ) { while ( have_posts() ) { the_post();
-        echo '<div style="max-width:760px;margin:0 auto;padding:100px 24px 60px;" class="jt-prose">';
-        the_content();
-        echo '</div>';
-    } }
-    get_footer();
-}
+
+get_header();
+?>
+
+<div class="jt-post-layout">
+	<div style="max-width:760px;margin:0 auto;padding:60px 24px;">
+		<?php jt_breadcrumbs(); ?>
+
+		<?php if ( have_posts() ) : ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<article class="jt-prose">
+					<h1><?php the_title(); ?></h1>
+					<?php the_content(); ?>
+				</article>
+			<?php endwhile; ?>
+		<?php else : ?>
+			<div style="text-align:center;padding:80px 0;color:#7A808A;">
+				<p style="font-size:48px;margin-bottom:16px;">♠</p>
+				<h2 style="font-family:'Bricolage Grotesque',sans-serif;color:#fff;margin-bottom:12px;">Nada por aquí</h2>
+				<p>No encontramos contenido en esta dirección.</p>
+			</div>
+		<?php endif; ?>
+	</div>
+</div>
+
+<?php
+get_footer();

@@ -1,0 +1,12 @@
+/**
+ * Jhontra PLO5 — motion.css
+ * Respeta prefers-reduced-motion. SIEMPRE se encola de ultimo.
+ */
+
+/* ══════════════════════════════════════════════════
+   REDUCED MOTION
+   ══════════════════════════════════════════════════ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}
+  .jt-card__link:hover{transform:none}
+}
