@@ -50,3 +50,60 @@ ahí. Pegar su contenido en Apariencia → Editor de archivos del tema → heade
 
 Produce exactamente el mismo marcado que el `header.php` de este repo. Cuando se
 despliegue el repo completo, el de `/inc` toma el relevo sin cambio visual.
+
+
+---
+
+# Aplicado en producción el 30/07/2026
+
+Hecho desde Apariencia → Editor de archivos del tema, con `wp-admin`.
+
+1. **`header.php` reescrito.** Pasó de 463 a 4198 caracteres. Header completo con
+   age gate, logo J♠ y la nav unificada de 6 items. Verificado en vivo: la nav
+   sale en todas las páginas del blog y marca "Blog / Noticias" como activa.
+
+2. **`front-page.html` corregido.** 16 reemplazos, 73000 → 73202 caracteres:
+   los 9 WhatsApp rotos, "Blog / Noticias" en la nav de escritorio y móvil, y
+   los 5 enlaces que apuntaban a `href="#"` ahora van a `/blog/`.
+   Verificado en vivo: 9 enlaces de WhatsApp, 0 rotos.
+
+3. **`functions.php` reparado.** Tenía doble codificación UTF-8: los bytes
+   correctos habían pasado por un `utf8_encode()` de más en algún guardado
+   anterior. Las migas de pan salían como `Inicio â€º Blog â€º Mindset`.
+   Se decodificó a UTF-8 real (4504 → 4483 caracteres, que coincide exactamente
+   con el archivo de este repo) y se guardó. Verificado en vivo:
+   `Inicio › Blog › Mindset › …`.
+
+4. **Página "Inicio"** creada vacía, id 21. La página "Blog" es la id 6.
+
+5. **Caché de LiteSpeed purgada.**
+
+## Lo único que falta
+
+**Ajustes → Lectura.** El control de seguridad de la sesión de Claude bloquea
+modificar ajustes del sitio, así que este paso lo tiene que dar una persona:
+
+- Tu página de inicio muestra: **Una página estática**
+- Página de inicio: **Inicio**
+- Página de entradas: **Blog**
+- Guardar cambios
+
+Sin esto, `/blog/` sigue siendo una página vacía y las 6 entradas no tienen
+listado. La portada NO cambia de aspecto: `front-page.php` la sigue
+interceptando con `readfile()` + `exit`.
+
+Después conviene purgar LiteSpeed otra vez.
+
+## Aviso sobre la codificación
+
+Cualquier herramienta que vuelva a guardar los archivos del tema pasándolos por
+`utf8_encode()` va a repetir el problema de las migas de pan. Si vuelves a ver
+`â€º` o `Ã©` en el sitio, es eso. Los archivos de este repositorio están en
+UTF-8 correcto.
+
+## Medición de la nav
+
+Con 6 items la nav de escritorio necesita 866 px. El breakpoint que la muestra
+está en 860 px, así que entre 860 y 900 px va justa (0 px de margen a 860 px,
+34 px a 900 px). De 900 px en adelante sobra espacio. Si se quiere margen de
+seguridad, subir el breakpoint de 860 a 900 px en `assets/js/theme.js`.
