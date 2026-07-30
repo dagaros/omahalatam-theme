@@ -1,17 +1,37 @@
 <?php
 /**
- * Header global: age gate 18+, nav sticky con logo J♠ y menú móvil.
- * El JS de comportamiento está en assets/js/theme.js.
+ * Header global — age gate 18+, nav sticky con logo J♠ y menú móvil.
+ *
+ * La nav es la MISMA que la de la portada estática (front-page.html).
+ * Si tocas una, toca la otra: la portada se sirve fuera de WordPress y no
+ * puede leer este archivo.
+ *
+ * Anclas de la portada: s2 Método · s3 Jhontra · s4 Clubes · s5 Contenido · s6 Empezar
  *
  * @package jhontra-theme
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+$jt_wa  = 'https://wa.me/573107114689';
+$jt_home = trailingslashit( home_url( '/' ) );
+$jt_en_blog = ( is_home() || is_archive() || is_single() || is_search() );
+
+$jt_nav = array(
+	array( 'Método',          $jt_home . '#s2', false ),
+	array( 'Jhontra',         $jt_home . '#s3', false ),
+	array( 'Clubes',          $jt_home . '#s4', false ),
+	array( 'Contenido',       $jt_home . '#s5', false ),
+	array( 'Blog / Noticias', home_url( '/blog/' ), $jt_en_blog ),
+	array( 'Empezar',         $jt_home . '#s6', false ),
+);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -52,14 +72,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     <!-- Desktop nav -->
     <div class="jt-nav__links" id="jt-desktop-nav">
-      <?php foreach ( jt_nav_items() as $jt_item ) : ?>
-        <a href="<?php echo esc_url( $jt_item['url'] ); ?>"<?php echo $jt_item['active'] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_item['label'] ); ?></a>
+      <?php foreach ( $jt_nav as $jt_i ) : ?>
+        <a href="<?php echo esc_url( $jt_i[1] ); ?>"<?php echo $jt_i[2] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_i[0] ); ?></a>
       <?php endforeach; ?>
     </div>
 
     <!-- Actions -->
     <div class="jt-nav__actions">
-      <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__cta" id="jt-desktop-cta" target="_blank" rel="noopener">
+      <a href="<?php echo esc_url( $jt_wa ); ?>" class="jt-nav__cta" id="jt-desktop-cta" target="_blank" rel="noopener">
         <span>✆</span> WhatsApp
       </a>
       <button type="button" id="jt-mobile-btn" class="jt-nav__hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -68,10 +88,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
   <!-- Mobile menu -->
   <div class="jt-nav__mobile" id="jt-mobile-menu" style="display:none;">
-    <?php foreach ( jt_nav_items() as $jt_item ) : ?>
-      <a href="<?php echo esc_url( $jt_item['url'] ); ?>"<?php echo $jt_item['active'] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_item['label'] ); ?></a>
+    <?php foreach ( $jt_nav as $jt_i ) : ?>
+      <a href="<?php echo esc_url( $jt_i[1] ); ?>"<?php echo $jt_i[2] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_i[0] ); ?></a>
     <?php endforeach; ?>
-    <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__mobile-cta" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    <a href="<?php echo esc_url( $jt_wa ); ?>" class="jt-nav__mobile-cta" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
   </div>
 </header>
 

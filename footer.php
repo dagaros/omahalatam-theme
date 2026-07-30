@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <p>Escríbele a Jhontra y accede a las condiciones y bonos de bienvenida más competitivos de LATAM en Suprema, PPPoker y más clubes asociados. Sin costo, sin letra pequeña.</p>
       <div class="jt-cta-band__btns">
         <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-btn-gold jt-btn-sweep" target="_blank" rel="noopener"><span>✆</span> Hablar con Jhontra</a>
-        <a href="<?php echo esc_url( home_url('/#clubes') ); ?>" class="jt-btn-ghost">Ver clubes asociados</a>
+        <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>" class="jt-btn-ghost">Ver clubes asociados</a>
       </div>
     </div>
   </div>
@@ -48,11 +48,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <div>
         <div class="jt-footer__heading">Enlaces rápidos</div>
         <div class="jt-footer__links">
-          <a href="<?php echo esc_url( home_url('/#acerca') ); ?>">Acerca de Jhontra</a>
-          <a href="<?php echo esc_url( home_url('/#clubes') ); ?>">Suprema Poker</a>
-          <a href="<?php echo esc_url( home_url('/#clubes') ); ?>">PPPoker</a>
+          <a href="<?php echo esc_url( jt_anchor_url('jhontra') ); ?>">Acerca de Jhontra</a>
+          <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>">Suprema Poker</a>
+          <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>">PPPoker</a>
           <a href="<?php echo esc_url( home_url('/blog/') ); ?>">Blog · Análisis y Contenido</a>
-          <a href="<?php echo esc_url( home_url('/#contacto') ); ?>">Contacto</a>
+          <a href="<?php echo esc_url( jt_anchor_url('empezar') ); ?>">Contacto</a>
         </div>
       </div>
       <!-- Social -->

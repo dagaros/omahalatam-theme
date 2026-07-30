@@ -84,6 +84,58 @@ function jt_primary_cat( $id = null ) {
 }
 
 /**
+ * Anclas de las secciones de la portada.
+ *
+ * La portada (front-page.html) numera sus secciones s2…s6. Este mapa traduce
+ * nombres legibles a esos ids para que las plantillas no dependan de la
+ * numeración. Si algún día la portada cambia sus ids, se corrige aquí y punto.
+ *
+ * @return array<string,string>
+ */
+function jt_home_anchors() {
+	return apply_filters( 'jt_home_anchors', array(
+		'metodo'    => 's2', // El método / por qué PLO5
+		'jhontra'   => 's3', // Sobre el coach
+		'clubes'    => 's4', // Suprema y PPPoker
+		'contenido' => 's5', // Videos y análisis
+		'empezar'   => 's6', // Onboarding / contacto
+	) );
+}
+
+/**
+ * URL absoluta a una sección de la portada.
+ *
+ * @param string $key Clave de jt_home_anchors().
+ * @return string
+ */
+function jt_anchor_url( $key ) {
+	$anchors = jt_home_anchors();
+	return home_url( '/#' . ( isset( $anchors[ $key ] ) ? $anchors[ $key ] : 'top' ) );
+}
+
+/**
+ * Menú principal del sitio.
+ *
+ * Es el MISMO menú que la portada estática (front-page.html). Si tocas uno,
+ * toca el otro: la portada no puede leer esta función porque se sirve fuera
+ * de WordPress.
+ *
+ * @return array<int,array{label:string,url:string,active:bool}>
+ */
+function jt_nav_items() {
+	$en_blog = is_home() || is_archive() || is_single() || is_search();
+
+	return apply_filters( 'jt_nav_items', array(
+		array( 'label' => 'Método',          'url' => jt_anchor_url( 'metodo' ),    'active' => false ),
+		array( 'label' => 'Jhontra',         'url' => jt_anchor_url( 'jhontra' ),   'active' => false ),
+		array( 'label' => 'Clubes',          'url' => jt_anchor_url( 'clubes' ),    'active' => false ),
+		array( 'label' => 'Contenido',       'url' => jt_anchor_url( 'contenido' ), 'active' => false ),
+		array( 'label' => 'Blog / Noticias', 'url' => home_url( '/blog/' ),         'active' => $en_blog ),
+		array( 'label' => 'Empezar',         'url' => jt_anchor_url( 'empezar' ),   'active' => false ),
+	) );
+}
+
+/**
  * Número de WhatsApp del equipo de Jhontra.
  * Punto único de cambio: si cambia el número, se cambia aquí y se propaga
  * a nav, footer, FAB, CTAs y sidebar.

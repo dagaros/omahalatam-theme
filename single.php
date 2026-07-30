@@ -76,7 +76,7 @@ $tags     = get_the_tags();
             <p>Rakeback competitivo, material de estudio exclusivo y una comunidad activa que juega, estudia y gana en equipo.</p>
             <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
               <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-btn-gold jt-btn-sweep" style="padding:15px 28px;border-radius:13px;font-size:15.5px;" target="_blank" rel="noopener"><span>✆</span> Registrarme con Jhontra</a>
-              <a href="<?php echo esc_url( home_url('/#clubes') ); ?>" class="jt-btn-ghost" style="padding:15px 24px;border-radius:13px;font-size:15.5px;">Ver clubes asociados</a>
+              <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>" class="jt-btn-ghost" style="padding:15px 24px;border-radius:13px;font-size:15.5px;">Ver clubes asociados</a>
             </div>
           </div>
         </div>
