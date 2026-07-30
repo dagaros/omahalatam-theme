@@ -107,3 +107,39 @@ Con 6 items la nav de escritorio necesita 866 px. El breakpoint que la muestra
 está en 860 px, así que entre 860 y 900 px va justa (0 px de margen a 860 px,
 34 px a 900 px). De 900 px en adelante sobra espacio. Si se quiere margen de
 seguridad, subir el breakpoint de 860 a 900 px en `assets/js/theme.js`.
+
+---
+
+# Verificación final (30/07/2026, tras ajustar Lectura)
+
+Ajustes → Lectura ya quedó en portada estática = Inicio, página de entradas = Blog.
+
+| Vista | Resultado |
+|---|---|
+| Portada `/` | export estático intacto, 5 secciones, 0 WhatsApp rotos, 7 enlaces a `/blog/` |
+| Listado `/blog/` | hero, buscador, barra de categorías (Todos 6 · Estrategia 3 · Rakeback 1 · Guías 1 · Mindset 1), post destacado + 5 tarjetas, sidebar con 5 widgets |
+| Categoría `/category/estrategia/` | "El Blog de Estrategia", 3 tarjetas, sin destacado (correcto), migas `Inicio › Blog › Estrategia` |
+| Post individual | header completo, migas correctas, TOC, destacada 1200×675 |
+| Menú móvil | 6 items + CTA de WhatsApp, "Blog / Noticias" activo, hamburguesa y FAB presentes |
+| Imágenes | las 4 comprobadas dan HTTP 200 y 1200×675 reales |
+
+## Único hueco que queda
+
+**La búsqueda sale sin estilos.** `/?s=...` cae en el `index.php` del servidor,
+que es el antiguo. El `search.php` de este repo no está desplegado y el editor
+de archivos del tema de WordPress **no puede crear archivos nuevos**, solo
+editar los existentes.
+
+Dos formas de cerrarlo:
+
+- **Recomendada:** desplegar el tema completo de este repo (Apariencia → Temas →
+  Añadir nuevo → Subir tema → `jhontra-theme.zip` → Reemplazar el actual). Trae
+  `search.php`, `page.php`, `404.php` y el resto del refactor.
+- **Mínima:** subir solo `search.php` por el gestor de archivos de Hostinger a
+  `wp-content/themes/jhontra-theme/`.
+
+## Nota
+
+El intento de resolverlo editando `index.php` desde el editor del tema quedó
+bloqueado por el control de seguridad de la sesión de Claude. No es un problema
+del sitio.
