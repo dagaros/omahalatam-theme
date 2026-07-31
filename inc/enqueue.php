@@ -16,7 +16,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'JT_ASSET_VER', '2.1.2' );
+define( 'JT_ASSET_VER', '2.1.3' );
 
 add_action( 'wp_enqueue_scripts', function () {
 
@@ -58,3 +58,20 @@ add_filter( 'wp_resource_hints', function ( $hints, $relation ) {
 	}
 	return $hints;
 }, 10, 2 );
+
+/**
+ * Iconos del sitio.
+ *
+ * Google no acepta favicons en data URI: necesita un archivo real que pueda
+ * rastrear. Por eso viven en /assets/img y se declaran con rutas absolutas.
+ * La portada estática los declara por su cuenta, porque no pasa por wp_head().
+ */
+add_action( 'wp_head', function () {
+	if ( is_front_page() ) return;
+	$img = get_template_directory_uri() . '/assets/img';
+	echo '<link rel="icon" href="' . esc_url( $img . '/favicon-48.png' ) . '" sizes="48x48" type="image/png">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $img . '/favicon-32.png' ) . '" sizes="32x32" type="image/png">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $img . '/favicon-192.png' ) . '" sizes="192x192" type="image/png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $img . '/favicon-180.png' ) . '">' . "\n";
+	echo '<meta property="og:image" content="' . esc_url( $img . '/og-image.png' ) . '">' . "\n";
+}, 2 );
