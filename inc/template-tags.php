@@ -116,14 +116,29 @@ function jt_front_page_cards( $cantidad = 3 ) {
 
 		$cat   = jt_primary_cat();
 		$fecha = strtoupper( get_the_date( 'd M Y' ) );
+		$img   = get_the_post_thumbnail_url( get_the_ID(), 'jt-featured' );
+
+		/*
+		 * Miniatura: la portada del artículo si existe. Si no, se conserva el
+		 * marcador de rayas del diseño original para que la tarjeta no se
+		 * desarme. El botón de play solo aparece sin portada: sobre una
+		 * portada real prometería un vídeo donde hay un artículo.
+		 */
+		if ( $img ) {
+			$miniatura = '
+          <div style="position:absolute;inset:0;background-image:url(' . esc_url( $img ) . ');background-size:cover;background-position:center;"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,0.55) 100%);"></div>';
+		} else {
+			$miniatura = '
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.08),transparent 60%);"></div>
+          <div style="position:relative;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px;">&#9654;</div>';
+		}
 
 		$out .= '
       <article data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
-        <div style="aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 12px,#0f0f11 12px 24px);position:relative;display:grid;place-items:center;">
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.08),transparent 60%);"></div>
-          <div style="position:relative;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px;">&#9654;</div>
+        <a href="' . esc_url( get_permalink() ) . '" style="display:block;aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 12px,#0f0f11 12px 24px);position:relative;display:grid;place-items:center;">' . $miniatura . '
           <div style="position:absolute;bottom:10px;right:10px;font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:#9AA0AA;background:rgba(0,0,0,0.6);padding:3px 7px;border-radius:5px;">' . esc_html( $cat ) . '</div>
-        </div>
+        </a>
         <div style="padding:20px;">
           <div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:1px;color:#7A808A;margin-bottom:9px;">' . esc_html( $fecha ) . '</div>
           <h3 style="margin:0 0 16px;font-size:17px;font-weight:600;line-height:1.35;color:#fff;">' . esc_html( get_the_title() ) . '</h3>

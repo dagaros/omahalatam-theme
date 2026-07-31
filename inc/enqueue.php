@@ -16,7 +16,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'JT_ASSET_VER', '2.1.1' );
+define( 'JT_ASSET_VER', '2.1.2' );
 
 add_action( 'wp_enqueue_scripts', function () {
 
