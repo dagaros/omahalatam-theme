@@ -10,6 +10,7 @@
  *   inc/template-tags.php  jt_reading_time(), jt_breadcrumbs(), jt_whatsapp()…
  *   inc/schema.php         JSON-LD (Article / WebSite).
  *   inc/cleanup.php        Head, extractos, comentarios, query, buscador.
+ *   inc/analytics.php      Google Tag Manager (GA4 y eventos de conversión).
  *
  * @package jhontra-theme
  * @link    https://omahalatam.com
@@ -20,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'JT_THEME_DIR', get_template_directory() );
 define( 'JT_THEME_URI', get_template_directory_uri() );
 
-foreach ( array( 'setup', 'enqueue', 'template-tags', 'schema', 'cleanup' ) as $jt_module ) {
+foreach ( array( 'setup', 'enqueue', 'template-tags', 'schema', 'cleanup', 'analytics' ) as $jt_module ) {
 	$jt_file = JT_THEME_DIR . '/inc/' . $jt_module . '.php';
 	if ( file_exists( $jt_file ) ) {
 		require_once $jt_file;
