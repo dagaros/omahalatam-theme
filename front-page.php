@@ -47,6 +47,16 @@ if ( file_exists( $jt_static_home ) ) {
 		}
 	}
 
+	/**
+	 * Medición: la portada no pasa por wp_head() ni por wp_body_open(), así que
+	 * el contenedor de Google Tag Manager se inyecta aquí a mano. Sin esto la
+	 * página más visitada del sitio quedaría fuera de GA4.
+	 */
+	if ( function_exists( 'jt_gtm_head' ) && false === strpos( $jt_html, JT_GTM_ID ) ) {
+		$jt_html = preg_replace( '/<head>/i', '<head>' . "\n" . jt_gtm_head(), $jt_html, 1 );
+		$jt_html = preg_replace( '/<body([^>]*)>/i', '<body$1>' . "\n" . jt_gtm_noscript(), $jt_html, 1 );
+	}
+
 	echo $jt_html; // phpcs:ignore WordPress.Security.EscapeOutput — export estático propio del tema.
 	exit;
 }
