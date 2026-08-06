@@ -12,9 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php echo jt_gtm_head(); // phpcs:ignore WordPress.Security.EscapeOutput — fragmento fijo de Google Tag Manager. ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php echo jt_gtm_noscript(); // phpcs:ignore WordPress.Security.EscapeOutput — fragmento fijo de Google Tag Manager. ?>
 <?php wp_body_open(); ?>
 
 <!-- Age Gate -->
