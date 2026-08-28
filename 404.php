@@ -28,8 +28,8 @@ get_header();
 	<div style="max-width:1240px;margin:0 auto;padding:0 24px 40px;">
 
 		<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="jt-btn-gold jt-btn-sweep">Ir a la portada</a>
-			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="jt-btn-ghost">Ver el blog</a>
+			<a href="<?php echo esc_url( jt_home_url( '/' ) ); ?>" class="jt-btn-gold jt-btn-sweep"><?php echo esc_html( jt_t('ir_portada') ); ?></a>
+			<a href="<?php echo esc_url( jt_home_url( '/blog/' ) ); ?>" class="jt-btn-ghost"><?php echo esc_html( jt_t('ver_blog') ); ?></a>
 			<a href="<?php echo esc_url( jt_whatsapp_url( 'Hola Jhontra, no encontré lo que buscaba en la web.' ) ); ?>" class="jt-btn-ghost" target="_blank" rel="noopener"><span>✆</span> Escribir por WhatsApp</a>
 		</div>
 

@@ -15,7 +15,7 @@ get_header();
 
 $cats     = get_the_category();
 $cat_name = ! empty($cats) ? $cats[0]->name : 'Blog';
-$cat_link = ! empty($cats) ? get_category_link($cats[0]->term_id) : home_url('/blog/');
+$cat_link = ! empty($cats) ? get_category_link($cats[0]->term_id) : jt_home_url('/blog/');
 $tags     = get_the_tags();
 ?>
 
@@ -154,7 +154,7 @@ if ( $related->have_posts() ) : ?>
   <div class="jt-related__inner">
     <div class="jt-related__header">
       <h2>Sigue leyendo</h2>
-      <a href="<?php echo esc_url( home_url('/blog/') ); ?>" class="jt-related__all">Ver todo →</a>
+      <a href="<?php echo esc_url( jt_home_url('/blog/') ); ?>" class="jt-related__all"><?php echo esc_html( jt_t('ver_todo') ); ?> →</a>
     </div>
     <div class="jt-related__grid" data-related-grid>
       <?php while ( $related->have_posts() ) : $related->the_post();

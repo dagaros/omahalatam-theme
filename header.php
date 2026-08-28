@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <header class="jt-nav" id="jt-nav">
   <nav class="jt-nav__inner">
     <!-- Logo: J♠ card -->
-    <a href="<?php echo esc_url( home_url('/') ); ?>" class="jt-logo" aria-label="Jhontra — Inicio">
+    <a href="<?php echo esc_url( jt_home_url('/') ); ?>" class="jt-logo" aria-label="Jhontra — Inicio">
       <div class="jt-logo__card">
         <div class="jt-logo__shadow"></div>
         <div class="jt-logo__face">

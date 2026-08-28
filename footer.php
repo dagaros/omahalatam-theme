@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <div class="jt-cta-band__inner">
     <div class="jt-cta-band__glow"></div>
     <div class="jt-cta-band__content">
-      <div class="jt-pill">Promociones exclusivas</div>
-      <h2>¿Quieres los <span class="jt-gold">mejores bonos</span> en las salas donde ya juegas?</h2>
-      <p>Escríbele a Jhontra y accede a las condiciones y bonos de bienvenida más competitivos de LATAM en Suprema, PPPoker y más clubes asociados. Sin costo, sin letra pequeña.</p>
+      <div class="jt-pill"><?php echo esc_html( jt_t('cta_pill') ); ?></div>
+      <h2><?php echo esc_html( jt_t('cta_h2_a') ); ?><span class="jt-gold"><?php echo esc_html( jt_t('cta_h2_gold') ); ?></span><?php echo esc_html( jt_t('cta_h2_b') ); ?></h2>
+      <p><?php echo esc_html( jt_t('cta_texto') ); ?></p>
       <div class="jt-cta-band__btns">
-        <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-btn-gold jt-btn-sweep" target="_blank" rel="noopener"><span>✆</span> Hablar con Jhontra</a>
-        <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>" class="jt-btn-ghost">Ver clubes asociados</a>
+        <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-btn-gold jt-btn-sweep" target="_blank" rel="noopener"><span>✆</span> <?php echo esc_html( jt_t('cta_wa') ); ?></a>
+        <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>" class="jt-btn-ghost"><?php echo esc_html( jt_t('cta_clubes') ); ?></a>
       </div>
     </div>
   </div>
@@ -42,22 +42,22 @@ if ( ! defined( 'ABSPATH' ) ) exit;
           </div>
           <span class="jt-logo__name">Jhontra</span>
         </div>
-        <p class="jt-footer__desc">Autoridad de Omaha 5 Cartas en Latinoamérica. Contenido gratuito, rakeback competitivo y comunidad.</p>
+        <p class="jt-footer__desc"><?php echo esc_html( jt_t('f_desc') ); ?></p>
       </div>
       <!-- Links -->
       <div>
-        <div class="jt-footer__heading">Enlaces rápidos</div>
+        <div class="jt-footer__heading"><?php echo esc_html( jt_t('f_enlaces') ); ?></div>
         <div class="jt-footer__links">
-          <a href="<?php echo esc_url( jt_anchor_url('jhontra') ); ?>">Acerca de Jhontra</a>
+          <a href="<?php echo esc_url( jt_anchor_url('jhontra') ); ?>"><?php echo esc_html( jt_t('f_acerca') ); ?></a>
           <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>">Suprema Poker</a>
           <a href="<?php echo esc_url( jt_anchor_url('clubes') ); ?>">PPPoker</a>
-          <a href="<?php echo esc_url( home_url('/blog/') ); ?>">Blog · Análisis y Contenido</a>
-          <a href="<?php echo esc_url( jt_anchor_url('empezar') ); ?>">Contacto</a>
+          <a href="<?php echo esc_url( jt_home_url('/blog/') ); ?>"><?php echo esc_html( jt_t('f_blog') ); ?></a>
+          <a href="<?php echo esc_url( jt_anchor_url('empezar') ); ?>"><?php echo esc_html( jt_t('f_contacto') ); ?></a>
         </div>
       </div>
       <!-- Social -->
       <div>
-        <div class="jt-footer__heading">Redes sociales</div>
+        <div class="jt-footer__heading"><?php echo esc_html( jt_t('f_redes') ); ?></div>
         <div class="jt-footer__links">
           <a href="#" target="_blank" rel="noopener">YouTube</a>
           <a href="#" target="_blank" rel="noopener">Instagram</a>
@@ -68,11 +68,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       </div>
       <!-- Legal -->
       <div>
-        <div class="jt-footer__heading">Legal</div>
+        <div class="jt-footer__heading"><?php echo esc_html( jt_t('f_legal') ); ?></div>
         <div class="jt-footer__links">
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Privacidad</a>
-          <a href="#">Política de Cookies</a>
+          <a href="#"><?php echo esc_html( jt_t('f_terminos') ); ?></a>
+          <a href="#"><?php echo esc_html( jt_t('f_privacidad') ); ?></a>
+          <a href="#"><?php echo esc_html( jt_t('f_cookies') ); ?></a>
         </div>
       </div>
     </div>
@@ -80,11 +80,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <!-- 18+ Warning -->
     <div class="jt-footer__age-warn">
       <div class="jt-footer__age-badge">18+</div>
-      <p>El poker es un juego para mayores de 18 años. Juega con responsabilidad. Recursos de ayuda: <a href="https://www.jugarbien.es" target="_blank" rel="noopener">jugarbien.es</a> · <a href="https://www.jugadoresanonimos.org" target="_blank" rel="noopener">jugadoresanonimos.org</a></p>
+      <p><?php echo esc_html( jt_t('f_edad') ); ?>
+        <?php if ( jt_is_pt() ) : ?>
+          <a href="https://jogadoresanonimos.org.br" target="_blank" rel="noopener">jogadoresanonimos.org.br</a> · <a href="https://www.cvv.org.br" target="_blank" rel="noopener">cvv.org.br</a>
+        <?php else : ?>
+          <a href="https://www.jugarbien.es" target="_blank" rel="noopener">jugarbien.es</a> · <a href="https://www.jugadoresanonimos.org" target="_blank" rel="noopener">jugadoresanonimos.org</a>
+        <?php endif; ?></p>
     </div>
 
-    <p class="jt-footer__affiliate">Este sitio contiene enlaces de afiliado. Jhontra recibe una comisión por los jugadores que se registran a través de sus códigos de referido. Esto no tiene costo adicional para ti.</p>
-    <div class="jt-footer__copy">© <?php echo date('Y'); ?> Jhontra · PLO5 · Todos los derechos reservados.</div>
+    <p class="jt-footer__affiliate"><?php echo esc_html( jt_t('f_afiliado') ); ?></p>
+    <div class="jt-footer__copy">© <?php echo date('Y'); ?> Jhontra · PLO5 · <?php echo esc_html( jt_t('f_copy') ); ?></div>
   </div>
 </footer>
 

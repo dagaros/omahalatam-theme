@@ -43,7 +43,7 @@ $categories = get_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'h
 if ( ! empty( $categories ) ) : ?>
 <div class="jt-cat-bar">
   <div class="jt-cat-bar__inner">
-    <a href="<?php echo esc_url( home_url('/blog/') ); ?>"
+    <a href="<?php echo esc_url( jt_home_url('/blog/') ); ?>"
        class="jt-cat-tag <?php if ( is_home() && ! is_category() ) echo 'jt-cat-tag--active'; ?>">
       Todos <span class="jt-cat-tag__count"><?php echo wp_count_posts()->publish; ?></span>
     </a>
