@@ -37,7 +37,7 @@ add_action( 'pre_get_posts', function ( $q ) {
 /* ── Buscador ────────────────────────────────────────────────── */
 
 add_filter( 'get_search_form', function () {
-	return '<form role="search" method="get" action="' . esc_url( home_url( '/' ) ) . '" class="jt-search">
+	return '<form role="search" method="get" action="' . esc_url( jt_home_url( '/' ) ) . '" class="jt-search">
         <div class="jt-search__field"><span class="jt-search__icon">⌕</span>
         <input type="search" name="s" placeholder="Buscar artículos, manos, clubes…" aria-label="Buscar en el blog" value="' . esc_attr( get_search_query() ) . '" /></div>
         <button type="submit">Buscar</button></form>';

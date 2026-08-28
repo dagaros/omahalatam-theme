@@ -30,6 +30,24 @@ function jt_is_pt() {
 }
 
 /**
+ * Home del idioma actual.
+ *
+ * home_url() siempre devuelve la raiz en espanol, asi que cualquier ancla o
+ * enlace construido con ella saca al visitante brasileno de /pt/.
+ */
+function jt_home_url( $path = '/' ) {
+
+	if ( function_exists( 'pll_home_url' ) ) {
+		$base = pll_home_url( jt_lang() );
+		if ( $base ) {
+			return trailingslashit( $base ) . ltrim( $path, '/' );
+		}
+	}
+
+	return home_url( $path );
+}
+
+/**
  * Diccionario de la interfaz del tema.
  *
  * Solo cubre las cadenas que el tema imprime a mano. El contenido de las
@@ -55,6 +73,43 @@ function jt_t( $key ) {
 
 		'lectura'       => array( 'es' => 'min de lectura', 'pt' => 'min de leitura' ),
 		'idioma'        => array( 'es' => 'Idioma',         'pt' => 'Idioma' ),
+
+		// Banda de CTA
+		'cta_pill'      => array( 'es' => 'Promociones exclusivas', 'pt' => 'Promoções exclusivas' ),
+		'cta_h2_a'      => array( 'es' => '¿Quieres los ',          'pt' => 'Quer os ' ),
+		'cta_h2_gold'   => array( 'es' => 'mejores bonos',          'pt' => 'melhores bônus' ),
+		'cta_h2_b'      => array( 'es' => ' en las salas donde ya juegas?', 'pt' => ' nas salas onde você já joga?' ),
+		'cta_texto'     => array(
+			'es' => 'Escríbele a Jhontra y accede a las condiciones y bonos de bienvenida más competitivos de LATAM en Suprema, PPPoker y más clubes asociados. Sin costo, sin letra pequeña.',
+			'pt' => 'Fale com o Jhontra e tenha acesso às condições e aos bônus de boas-vindas mais competitivos da América Latina na Suprema, no PPPoker e nos demais clubes parceiros. Sem custo e sem letra miúda.' ),
+		'cta_wa'        => array( 'es' => 'Hablar con Jhontra',   'pt' => 'Falar com o Jhontra' ),
+		'cta_clubes'    => array( 'es' => 'Ver clubes asociados', 'pt' => 'Ver clubes parceiros' ),
+
+		// Footer
+		'f_desc'        => array(
+			'es' => 'Autoridad de Omaha 5 Cartas en Latinoamérica. Contenido gratuito, rakeback competitivo y comunidad.',
+			'pt' => 'Autoridade em Omaha 5 Cartas na América Latina. Conteúdo gratuito, rakeback competitivo e comunidade.' ),
+		'f_enlaces'     => array( 'es' => 'Enlaces rápidos',             'pt' => 'Links rápidos' ),
+		'f_acerca'      => array( 'es' => 'Acerca de Jhontra',           'pt' => 'Sobre o Jhontra' ),
+		'f_blog'        => array( 'es' => 'Blog · Análisis y Contenido', 'pt' => 'Blog · Análises e conteúdo' ),
+		'f_contacto'    => array( 'es' => 'Contacto',                    'pt' => 'Contato' ),
+		'f_redes'       => array( 'es' => 'Redes sociales',              'pt' => 'Redes sociais' ),
+		'f_legal'       => array( 'es' => 'Legal',                       'pt' => 'Jurídico' ),
+		'f_terminos'    => array( 'es' => 'Términos y Condiciones',      'pt' => 'Termos e Condições' ),
+		'f_privacidad'  => array( 'es' => 'Política de Privacidad',      'pt' => 'Política de Privacidade' ),
+		'f_cookies'     => array( 'es' => 'Política de Cookies',         'pt' => 'Política de Cookies' ),
+		'f_edad'        => array(
+			'es' => 'El poker es un juego para mayores de 18 años. Juega con responsabilidad. Recursos de ayuda:',
+			'pt' => 'Poker é um jogo para maiores de 18 anos. Jogue com responsabilidade. Canais de ajuda:' ),
+		'f_afiliado'    => array(
+			'es' => 'Este sitio contiene enlaces de afiliado. Jhontra recibe una comisión por los jugadores que se registran a través de sus códigos de referido. Esto no tiene costo adicional para ti.',
+			'pt' => 'Este site contém links de afiliado. O Jhontra recebe uma comissão pelos jogadores que se cadastram pelos códigos de indicação. Isso não tem custo adicional nenhum para você.' ),
+		'f_copy'        => array( 'es' => 'Todos los derechos reservados.', 'pt' => 'Todos os direitos reservados.' ),
+
+		// Botones sueltos
+		'ir_portada'    => array( 'es' => 'Ir a la portada', 'pt' => 'Ir para a página inicial' ),
+		'ver_blog'      => array( 'es' => 'Ver el blog',     'pt' => 'Ver o blog' ),
+		'ver_todo'      => array( 'es' => 'Ver todo',        'pt' => 'Ver tudo' ),
 	);
 
 	$lang = jt_lang();
