@@ -57,6 +57,44 @@ if ( file_exists( $jt_static_home ) ) {
 		$jt_html = preg_replace( '/<body([^>]*)>/i', '<body$1>' . "\n" . jt_gtm_noscript(), $jt_html, 1 );
 	}
 
+	/**
+	 * Multiidioma: la portada tampoco pasa por language_attributes() ni por
+	 * el hreflang que Polylang imprime en wp_head(), asi que se inyecta aqui.
+	 */
+	if ( function_exists( 'jt_lang' ) ) {
+
+		$jt_locale = str_replace( '_', '-', get_locale() );
+		$jt_html   = preg_replace( '/<html([^>]*)\\slang="[^"]*"/i', '<html$1 lang="' . $jt_locale . '"', $jt_html, 1 );
+
+		$jt_alt = '';
+		foreach ( jt_languages() as $jt_l ) {
+			$jt_alt .= '<link rel="alternate" hreflang="' . esc_attr( $jt_l['slug'] ) . '" href="' . esc_url( $jt_l['url'] ) . '">' . "\n";
+			if ( 'es' === $jt_l['slug'] ) {
+				$jt_alt .= '<link rel="alternate" hreflang="x-default" href="' . esc_url( $jt_l['url'] ) . '">' . "\n";
+			}
+		}
+
+		if ( $jt_alt && false === strpos( $jt_html, 'hreflang=' ) ) {
+			$jt_html = preg_replace( '/<\\/head>/i', $jt_alt . '</head>', $jt_html, 1 );
+		}
+
+		if ( jt_is_pt() ) {
+			$jt_html = preg_replace(
+				'/<link rel="canonical" href="[^"]*">/i',
+				'<link rel="canonical" href="' . esc_url( home_url( '/' ) ) . '">',
+				$jt_html, 1
+			);
+		}
+
+		ob_start();
+		jt_language_switcher( 'jt-lang--nav' );
+		$jt_sw = trim( ob_get_clean() );
+
+		if ( $jt_sw && false !== strpos( $jt_html, '<!-- jt:lang -->' ) ) {
+			$jt_html = str_replace( '<!-- jt:lang -->', $jt_sw, $jt_html );
+		}
+	}
+
 	echo $jt_html; // phpcs:ignore WordPress.Security.EscapeOutput — export estático propio del tema.
 	exit;
 }

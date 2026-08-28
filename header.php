@@ -61,6 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
     <!-- Actions -->
     <div class="jt-nav__actions">
+      <?php jt_language_switcher( 'jt-lang--nav' ); ?>
       <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__cta" id="jt-desktop-cta" target="_blank" rel="noopener">
         <span>✆</span> WhatsApp
       </a>
