@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jhontra · Poker PLO5 e Omaha 5 Cartas | Autoridade #1 na América Latina</title>
+<meta name="description" content="Aprenda poker Omaha 5 Cartas (PLO5) com o Jhontra: análise de mãos, estratégia aplicada e rakeback competitivo nos clubes de Suprema e PPPoker. Conteúdo gratuito para jogadores do Brasil e da América Latina.">
+<meta name="keywords" content="PLO5, Omaha 5 Cartas, poker, rakeback, Suprema Poker, PPPoker, Jhontra, poker Brasil, análise de mãos, estratégia de poker">
+<meta name="author" content="Jhontra">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://omahalatam.com/pt/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://omahalatam.com/pt/">
+<meta property="og:title" content="Jhontra · Poker PLO5 e Omaha 5 Cartas | Autoridade #1 na América Latina">
+<meta property="og:description" content="Poker Omaha 5 Cartas com o Jhontra. Rakeback competitivo, conteúdo gratuito e os clubes de Suprema e PPPoker.">
+<meta property="og:image" content="https://omahalatam.com/wp-content/themes/jhontra-theme/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Jhontra · Poker PLO5">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jhontra · Poker PLO5 no Brasil e na América Latina">
+<meta name="twitter:description" content="Poker Omaha 5 Cartas: rakeback competitivo, conteúdo gratuito e a maior comunidade de PLO5 da América Latina.">
+<meta name="twitter:image" content="https://omahalatam.com/wp-content/themes/jhontra-theme/assets/img/og-image.png">
+<link rel="icon" href="/wp-content/themes/jhontra-theme/assets/img/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/wp-content/themes/jhontra-theme/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/wp-content/themes/jhontra-theme/assets/img/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/wp-content/themes/jhontra-theme/assets/img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B0B0C;color:#E2E8F0;font-family:"Hanken Grotesk",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#E7C877;text-decoration:none;transition:color .2s}
+a:hover{color:#F5E4A8}
+::selection{background:rgba(212,175,84,0.3);color:#fff}
+:focus-visible{outline:2px solid #E7C877;outline-offset:3px;border-radius:3px}
+::-webkit-scrollbar{width:10px}
+.jt-lang{display:inline-flex;align-items:center;gap:2px;border:1px solid rgba(212,175,84,.28);border-radius:9px;padding:3px;background:rgba(212,175,84,.06)}
+.jt-lang__item{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;font-weight:500;letter-spacing:.06em;color:#9AA0AA;padding:5px 9px;border-radius:6px;line-height:1;transition:.16s}
+.jt-lang__item:hover{color:#F5E4A8;background:rgba(212,175,84,.12)}
+.jt-lang__item.is-active{color:#2A2005;background:linear-gradient(180deg,#E7C877,#D4AF54);font-weight:600}
+::-webkit-scrollbar-track{background:#0B0B0C}
+::-webkit-scrollbar-thumb{background:#26262b;border-radius:8px}
+img{max-width:100%;height:auto}
+
+/* Animations */
+@keyframes jt-floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes jt-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.5)}50%{box-shadow:0 0 0 14px rgba(0,230,118,0)}}
+@keyframes jt-shine{0%{background-position:-140% 0}100%{background-position:240% 0}}
+@keyframes jt-blob{0%{transform:translate(0,0) scale(1)}33%{transform:translate(6%,-4%) scale(1.12)}66%{transform:translate(-5%,3%) scale(0.95)}100%{transform:translate(0,0) scale(1)}}
+@keyframes jt-blob2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-7%,5%) scale(1.15)}100%{transform:translate(0,0) scale(1)}}
+@keyframes jt-spin-ring{to{transform:rotate(360deg)}}
+@keyframes jt-rise{0%{transform:translateY(0);opacity:0}12%{opacity:0.5}88%{opacity:0.5}100%{transform:translateY(-120px);opacity:0}}
+@keyframes jt-sweep{0%{transform:skewX(-18deg) translateX(-280%)}55%,100%{transform:skewX(-18deg) translateX(360%)}}
+
+/* Sweep shine on buttons */
+.jt-sweep-btn{position:relative;overflow:hidden}
+.jt-sweep-btn::after{content:'';position:absolute;top:0;left:-30%;width:42%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,0.45),transparent);animation:jt-sweep 4.6s ease-in-out infinite;pointer-events:none}
+
+/* Button hover states */
+.btn-gold{background:#D4AF54;color:#2A2005;transition:background .2s,box-shadow .2s,transform .2s}
+.btn-gold:hover{background:#E7C877;color:#2A2005}
+.btn-ghost{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);color:#fff;transition:background .2s,border-color .2s}
+.btn-ghost:hover{background:rgba(255,255,255,0.09);border-color:rgba(255,255,255,0.28)}
+.btn-yt{background:#FF0000;color:#fff;transition:background .2s}
+.btn-yt:hover{background:#e60000}
+
+/* Card hover */
+.card-hover{transition:border-color .3s}
+.card-hover:hover{border-color:rgba(212,175,84,0.35)!important}
+
+/* Nav link hover */
+.nav-link{color:#E2E8F0;transition:color .2s}
+.nav-link:hover{color:#fff}
+
+/* Footer link hover */
+.foot-link{color:#C7CCD4;transition:color .2s}
+.foot-link:hover{color:#fff}
+
+/* FAQ details */
+details summary{list-style:none}
+details summary::-webkit-details-marker{display:none}
+
+/* Reveal animations */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1);will-change:opacity,transform}
+[data-reveal].revealed{opacity:1;transform:none}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .jt-sweep-btn::after{animation:none;display:none}
+}
+</style>
+</head>
+<body>
+<div id="app" style="position:relative;overflow-x:hidden;">
+
+<!-- ===================== AGE GATE MODAL ===================== -->
+<div id="ageGate" role="dialog" aria-modal="true" aria-label="Verificação de idade" style="display:none;position:fixed;inset:0;z-index:120;background:rgba(6,6,7,0.86);backdrop-filter:blur(10px);place-items:center;padding:24px;">
+  <div style="max-width:440px;width:100%;background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:40px 34px;text-align:center;box-shadow:0 40px 120px rgba(0,0,0,0.7);">
+    <div style="width:64px;height:64px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;font-family:'Hanken Grotesk';font-weight:800;font-size:22px;color:#2A2005;background:#D4AF54;letter-spacing:-0.5px;">18+</div>
+    <h2 style="margin:0 0 12px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-1px;font-size:30px;line-height:1.1;color:#fff;">Você tem mais de 18 anos?</h2>
+    <p style="margin:0 0 26px;font-size:15px;line-height:1.6;color:#9AA0AA;">Este site tem conteúdo sobre poker destinado apenas a maiores de idade. Poker é um jogo para maiores de 18 anos. Jogue com responsabilidade.</p>
+    <div style="display:flex;gap:12px;flex-direction:column;">
+      <button type="button" id="ageConfirm" class="btn-gold" style="width:100%;border:none;cursor:pointer;padding:15px;border-radius:12px;font-family:'Hanken Grotesk';font-weight:700;font-size:15px;">Sim, tenho mais de 18</button>
+      <a href="https://www.google.com" style="width:100%;padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);color:#9AA0AA;font-weight:600;font-size:14px;text-align:center;display:block;transition:color .2s,border-color .2s;" onmouseover="this.style.color='#E2E8F0';this.style.borderColor='rgba(255,255,255,0.25)'" onmouseout="this.style.color='#9AA0AA';this.style.borderColor='rgba(255,255,255,0.12)'">Sair do site</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== STICKY NAV ===================== -->
+<header id="top" style="position:sticky;top:0;z-index:90;background:rgba(11,11,12,0.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.06);">
+  <nav style="max-width:1240px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;">
+    <a href="#top" style="display:flex;align-items:center;gap:11px;color:#fff;">
+      <div style="position:relative;width:30px;height:40px;flex:0 0 auto;">
+        <div style="position:absolute;inset:0;border-radius:5px;background:#17171b;border:1px solid rgba(255,255,255,0.18);transform:rotate(-10deg);transform-origin:bottom left;"></div>
+        <div style="position:absolute;inset:0;border-radius:5px;background:linear-gradient(160deg,#D4AF54,#B8912F);transform:rotate(6deg);overflow:hidden;">
+          <div style="position:absolute;top:2px;left:3px;display:flex;flex-direction:column;align-items:center;line-height:0.7;color:#2A2005;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:8px;">J</span><span style="font-size:6px;">♠</span></div>
+          <div style="position:absolute;bottom:2px;right:3px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.7;color:#2A2005;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:8px;">J</span><span style="font-size:6px;">♠</span></div>
+          <svg viewBox="0 0 60 84" width="100%" height="100%" style="position:absolute;inset:0;" aria-hidden="true">
+            <line x1="10" y1="42" x2="50" y2="42" stroke="#2A2005" stroke-width="1.6"/>
+            <g fill="#2A2005">
+              <g id="knaveNav"><path d="M24 13 h12 v3 l-2 -2 -2 2 -2 -2 -2 2 -2 -2 z"/><rect x="24" y="16" width="12" height="2.4"/><circle cx="30" cy="24" r="4.6"/><path d="M24.5 30 q5.5 -3 11 0 l2 10 h-15 z"/><path d="M40 40 l-3.5 -9 5 2.5 z"/></g>
+              <use href="#knaveNav" transform="rotate(180 30 42)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;letter-spacing:0.5px;">Jhontra</span>
+    </a>
+    <div id="desktopNav" style="display:none;align-items:center;gap:30px;">
+      <a href="#s2" class="nav-link" style="font-size:14.5px;font-weight:500;">Método</a>
+      <a href="#s3" class="nav-link" style="font-size:14.5px;font-weight:500;">Jhontra</a>
+      <a href="#s4" class="nav-link" style="font-size:14.5px;font-weight:500;">Clubes</a>
+      <a href="#s5" class="nav-link" style="font-size:14.5px;font-weight:500;">Conteúdo</a>
+      <a href="/pt/blog/" class="nav-link" style="font-size:14.5px;font-weight:500;">Blog / Notícias</a>
+      <a href="#s6" class="nav-link" style="font-size:14.5px;font-weight:500;">Começar</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <!-- jt:lang -->
+      <a href="https://wa.me/573107114689" id="desktopCta" class="btn-gold" style="display:none;align-items:center;gap:8px;padding:11px 18px;border-radius:11px;font-weight:700;font-size:14px;">
+        <span style="font-size:16px;">✆</span> WhatsApp
+      </a>
+      <button type="button" aria-label="Abrir menu" id="mobileBtn" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff;width:42px;height:42px;border-radius:11px;cursor:pointer;font-size:18px;display:grid;place-items:center;">☰</button>
+    </div>
+  </nav>
+  <div id="mobileMenu" style="display:none;border-top:1px solid rgba(255,255,255,0.06);padding:16px 24px 22px;">
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      <a href="#s2" class="mobile-nav-link" style="padding:12px 4px;color:#E2E8F0;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.04);">Método</a>
+      <a href="#s3" class="mobile-nav-link" style="padding:12px 4px;color:#E2E8F0;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.04);">Jhontra</a>
+      <a href="#s4" class="mobile-nav-link" style="padding:12px 4px;color:#E2E8F0;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.04);">Clubes</a>
+      <a href="#s5" class="mobile-nav-link" style="padding:12px 4px;color:#E2E8F0;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.04);">Conteúdo</a>
+      <a href="/pt/blog/" class="mobile-nav-link" style="padding:12px 4px;color:#E2E8F0;font-size:16px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.04);">Blog / Notícias</a>
+      <a href="#s6" class="mobile-nav-link" style="padding:12px 4px;color:#E2E8F0;font-size:16px;font-weight:500;">Começar</a>
+      <a href="https://wa.me/573107114689" class="btn-gold" style="margin-top:14px;text-align:center;padding:14px;border-radius:12px;font-weight:700;font-size:15px;display:block;">Fale com a gente no WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== S1 HERO ===================== -->
+<section style="position:relative;overflow:hidden;padding:clamp(40px,6vw,84px) 24px clamp(44px,5vw,72px);">
+  <div style="position:absolute;top:-140px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(ellipse at center,rgba(212,175,84,0.16),transparent 62%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 60% at 50% 30%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 30%,#000,transparent 75%);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+    <div style="position:absolute;top:-10%;left:8%;width:min(60vw,520px);height:min(60vw,520px);border-radius:50%;background:radial-gradient(circle,rgba(212,175,84,0.16),transparent 65%);filter:blur(30px);animation:jt-blob 22s ease-in-out infinite;"></div>
+    <div style="position:absolute;bottom:-16%;right:4%;width:min(55vw,480px);height:min(55vw,480px);border-radius:50%;background:radial-gradient(circle,rgba(212,175,84,0.14),transparent 65%);filter:blur(34px);animation:jt-blob2 27s ease-in-out infinite;"></div>
+    <div style="position:absolute;top:50%;left:50%;width:min(120vw,1100px);height:min(120vw,1100px);transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 0deg,transparent 0 340deg,rgba(212,175,84,0.10) 355deg,transparent 360deg);-webkit-mask:radial-gradient(circle,transparent 0 46%,#000 47%,#000 49%,transparent 50%);mask:radial-gradient(circle,transparent 0 46%,#000 47%,#000 49%,transparent 50%);animation:jt-spin-ring 60s linear infinite;opacity:0.7;"></div>
+    <div style="position:absolute;left:18%;bottom:0;width:9px;height:9px;border-radius:50%;background:rgba(212,175,84,0.5);box-shadow:0 0 12px rgba(212,175,84,0.6);animation:jt-rise 9s ease-in-out infinite;"></div>
+    <div style="position:absolute;left:46%;bottom:0;width:6px;height:6px;border-radius:50%;background:rgba(212,175,84,0.4);box-shadow:0 0 10px rgba(212,175,84,0.5);animation:jt-rise 12s ease-in-out 2s infinite;"></div>
+    <div style="position:absolute;left:74%;bottom:0;width:8px;height:8px;border-radius:50%;background:rgba(212,175,84,0.45);box-shadow:0 0 12px rgba(212,175,84,0.55);animation:jt-rise 10.5s ease-in-out 4s infinite;"></div>
+  </div>
+  <div style="position:relative;max-width:1000px;margin:0 auto;text-align:center;">
+    <div data-reveal style="display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid rgba(212,175,84,0.28);background:rgba(212,175,84,0.06);border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#F5E4A8;margin-bottom:30px;">
+      <span style="width:6px;height:6px;border-radius:50%;background:#D4AF54;box-shadow:0 0 10px #D4AF54;"></span> Autoridade #1 de PLO5 na América Latina
+    </div>
+    <h1 data-reveal style="margin:0 auto;max-width:940px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(40px,7vw,82px);line-height:1.03;letter-spacing:-1px;color:#fff;">Omaha 5 Cartas: o jogo onde a <span style="color:#E7C877;font-weight:800;">Matemática</span> esmaga a sorte</h1>
+    <p data-reveal style="margin:26px auto 0;max-width:660px;font-size:clamp(16px,2vw,19px);line-height:1.62;color:#C7CCD4;">Enquanto o Hold'em fica lotado de regulars e estratégias batidas, o PLO5 é onde está a ação de verdade no poker online. Aprenda a estratégia certa e domine os apps de celular com a comunidade do Jhontra.</p>
+    <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px;">
+      <a href="https://wa.me/573107114689" class="btn-gold jt-sweep-btn" style="display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:13px;font-weight:700;font-size:16px;box-shadow:0 14px 40px rgba(212,175,84,0.28);">
+        <span style="font-size:18px;">✆</span> Jogue nos nossos clubes com rakeback
+      </a>
+      <a href="#s5" class="btn-ghost" style="display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:13px;font-weight:600;font-size:16px;">
+        <span style="color:#FF4D4D;">▶</span> Ver o canal no YouTube
+      </a>
+    </div>
+    <div data-reveal style="margin-top:56px;">
+      <div style="position:relative;max-width:840px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.09);box-shadow:0 40px 120px rgba(0,0,0,0.6);">
+        <div id="heroVideo" style="aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 14px,#0f0f11 14px 28px);display:grid;place-items:center;position:relative;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.10),transparent 60%);"></div>
+          <div style="position:relative;text-align:center;">
+            <div style="width:78px;height:78px;margin:0 auto 16px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);backdrop-filter:blur(6px);display:grid;place-items:center;color:#fff;font-size:26px;padding-left:5px;">▶</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;color:#7A808A;">youtube · Vídeo em destaque</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:34px;font-size:13.5px;color:#9AA0AA;">
+      <span style="display:inline-flex;align-items:center;gap:8px;"><span style="color:#D4AF54;">◆</span> Comunidade ativa</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;"><span style="color:#D4AF54;">◆</span> Rakeback competitivo</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;"><span style="color:#D4AF54;">◆</span> Suporte 24/7</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;"><span style="color:#D4AF54;">◆</span> Conteúdo gratuito</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS + TESTIMONIALS ===================== -->
+<section aria-label="Comunidade e confiança" style="padding:clamp(36px,5vw,56px) 24px;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);background:#0e0e10;">
+  <div style="max-width:1140px;margin:0 auto;">
+    <div id="statsGrid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:26px 20px;margin-bottom:44px;">
+      <div data-reveal style="text-align:center;"><div data-count="100" data-suffix="+" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,48px);color:#fff;letter-spacing:-1.5px;line-height:1;">0</div><div style="font-size:13px;color:#9AA0AA;margin-top:8px;letter-spacing:0.2px;">Jogadores na rede</div></div>
+      
+      <div data-reveal style="text-align:center;"><div data-count="12" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,48px);color:#fff;letter-spacing:-1.5px;line-height:1;">0</div><div style="font-size:13px;color:#9AA0AA;margin-top:8px;letter-spacing:0.2px;">Clubes parceiros</div></div>
+      <div data-reveal style="text-align:center;"><div data-count="15" data-suffix="+" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,48px);color:#fff;letter-spacing:-1.5px;line-height:1;">0</div><div style="font-size:13px;color:#9AA0AA;margin-top:8px;letter-spacing:0.2px;">Anos de experiência</div></div>
+    </div>
+    <div id="testimonialsGrid" style="display:grid;grid-template-columns:1fr;gap:18px;">
+      <div data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;"><div style="color:#E7C877;font-size:18px;letter-spacing:2px;margin-bottom:12px;">★★★★★</div><p style="margin:0 0 18px;font-size:15px;line-height:1.6;color:#E2E8F0;">Cheguei sem saber o que eram bloqueadores e em dois meses já jogo mesas médias com rakeback ativo. O suporte responde na hora.</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1c3b30,#10241c);border:1px solid rgba(212,175,84,0.3);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:#E7C877;font-size:15px;">C</div><div><div style="font-size:14px;font-weight:600;color:#fff;">Carlos M.</div><div style="font-size:12px;color:#7A808A;">Jogador · Suprema</div></div></div></div>
+      <div data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;"><div style="color:#E7C877;font-size:18px;letter-spacing:2px;margin-bottom:12px;">★★★★★</div><p style="margin:0 0 18px;font-size:15px;line-height:1.6;color:#E2E8F0;">O conteúdo gratuito do YouTube vale mais que muito curso pago por aí. É a comunidade de PLO5 mais séria que já vi.</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1c3b30,#10241c);border:1px solid rgba(212,175,84,0.3);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:#E7C877;font-size:15px;">A</div><div><div style="font-size:14px;font-weight:600;color:#fff;">Andrés R.</div><div style="font-size:12px;color:#7A808A;">Jogador · PPPoker</div></div></div></div>
+      <div data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;"><div style="color:#E7C877;font-size:18px;letter-spacing:2px;margin-bottom:12px;">★★★★★</div><p style="margin:0 0 18px;font-size:15px;line-height:1.6;color:#E2E8F0;">Saques rápidos e um rakeback de verdade, que aparece no fim do mês. Mudou minha forma de encarar o jogo nos apps.</p><div style="display:flex;align-items:center;gap:12px;"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1c3b30,#10241c);border:1px solid rgba(212,175,84,0.3);display:grid;place-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:#E7C877;font-size:15px;">D</div><div><div style="font-size:14px;font-weight:600;color:#fff;">Daniela T.</div><div style="font-size:12px;color:#7A808A;">Jogadora · Suprema</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S2 CINEMATIC — VENTAJA MATEMÁTICA ===================== -->
+<section id="s2" style="position:relative;min-height:74vh;display:grid;place-items:center;padding:clamp(48px,6vw,84px) 24px;overflow:hidden;background:linear-gradient(180deg,#0B0B0C,#0e0e10 50%,#0B0B0C);">
+  <div style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;">
+    <div style="position:absolute;width:min(80vw,620px);height:min(80vw,620px);background:radial-gradient(circle,rgba(212,175,84,0.13),transparent 60%);"></div>
+    <div data-spin style="position:relative;width:clamp(220px,42vw,380px);height:clamp(220px,42vw,380px);border-radius:50%;background:#0e0e10;box-shadow:0 0 0 1px rgba(255,255,255,0.06),0 40px 120px rgba(212,175,84,0.18),inset 0 0 70px rgba(0,0,0,0.65);display:grid;place-items:center;transition:transform 0.15s linear;opacity:0.9;">
+      <div style="position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 0deg,transparent 0 22deg,rgba(229,200,119,0.85) 22deg 26deg);-webkit-mask:radial-gradient(circle,transparent 0 69%,#000 71%);mask:radial-gradient(circle,transparent 0 69%,#000 71%);"></div>
+      <div style="position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,0.08);-webkit-mask:radial-gradient(circle,transparent 0 60%,#000 62%);mask:radial-gradient(circle,transparent 0 60%,#000 62%);"></div>
+      <div style="width:64%;height:64%;border-radius:50%;background:radial-gradient(circle at 50% 38%,#17171a,#0b0b0d);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06),inset 0 22px 44px rgba(0,0,0,0.6);display:grid;place-items:center;">
+        <div style="text-align:center;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(52px,10vw,88px);line-height:1;color:#fff;text-shadow:0 0 30px rgba(212,175,84,0.4);">5</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;color:#E7C877;margin-top:2px;">PLO5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;max-width:760px;text-align:center;z-index:2;">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#F5E4A8;margin-bottom:18px;">A vantagem matemática</div>
+    <h2 data-reveal style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(34px,5.5vw,60px);line-height:1.06;letter-spacing:-0.5px;color:#fff;">O poder da informação avançada</h2>
+    <p data-reveal style="margin:24px auto 0;max-width:620px;font-size:clamp(15px,1.8vw,17.5px);line-height:1.68;color:#C7CCD4;background:rgba(11,11,12,0.55);backdrop-filter:blur(4px);border-radius:16px;padding:20px 24px;">No Omaha 5 Cartas o jogo muda por completo. Com 5 cartas na mão, sua capacidade de calcular cenários se multiplica. É aqui que entra o conceito técnico central: os <strong style="color:#fff;font-weight:700;">bloqueadores</strong>. Ao segurar e bloquear 5 cartas do baralho desde o começo, você consegue deduzir o range do adversário com uma precisão impossível no Hold'em. No PLO5 a matemática premia quem estuda: reduz a variância e maximiza seus resultados contra jogadores recreativos.</p>
+    <div data-reveal style="display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:12px 22px;border:1px solid rgba(212,175,84,0.3);background:rgba(212,175,84,0.08);border-radius:100px;font-weight:600;font-size:15px;color:#fff;">
+      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;color:#E7C877;">5</span> cartas = mais informação = <span style="color:#E7C877;font-weight:700;">mais edge</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S3 QUIÉN ES JHONTRA ===================== -->
+<section id="s3" style="padding:clamp(48px,6vw,84px) 24px;">
+  <div id="aboutGrid" style="max-width:1140px;margin:0 auto;display:grid;gap:clamp(36px,5vw,72px);grid-template-columns:1fr;align-items:center;">
+    <div data-reveal style="position:relative;">
+      <div style="aspect-ratio:4/5;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 40px 100px rgba(0,0,0,0.5);position:relative;background:#141417;">
+        <img src="img/jhontra-photo.jpg" alt="Jhontra, jogador profissional de PLO5" style="width:100%;height:100%;object-fit:cover;object-position:60% 22%;display:block;" loading="lazy">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,11,12,0.55));"></div>
+      </div>
+      <div style="position:absolute;bottom:-18px;left:-18px;background:#D4AF54;color:#2A2005;padding:14px 18px;border-radius:14px;box-shadow:0 20px 50px rgba(212,175,84,0.35);">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;line-height:1;">PLO5</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;margin-top:3px;">PRO · COACH</div>
+      </div>
+    </div>
+    <div>
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#F5E4A8;margin-bottom:16px;">Quem é</div>
+      <h2 data-reveal style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-0.5px;color:#fff;">Quem é o Jhontra</h2>
+      <p data-reveal style="margin:0 0 30px;font-size:clamp(15px,1.7vw,17.5px);line-height:1.7;color:#C7CCD4;">Jogador profissional, analista de ranges e apaixonado por estratégia nos aplicativos de poker. O Jhontra construiu a carreira explorando as mesas de PLO5 com ferramentas de simulação de ponta e solvers avançados. A missão dele não é te vender um curso: é montar a maior e mais vencedora rede de jogadores da América Latina, compartilhando análise de mãos e conteúdo gratuito de alto nível no canal do YouTube.</p>
+      <a data-reveal href="#" style="display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:600;font-size:16px;border-bottom:1px solid rgba(212,175,84,0.5);padding-bottom:4px;transition:color .2s;" onmouseover="this.style.color='#E7C877'" onmouseout="this.style.color='#fff'">Conheça a história completa <span style="color:#E7C877;">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S4 CINEMATIC — RAKEBACK + CLUB CARDS ===================== -->
+<section id="s4" style="position:relative;overflow:hidden;padding:clamp(48px,6vw,84px) 24px;background:linear-gradient(180deg,#0B0B0C,#101012 40%,#0B0B0C);">
+  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse at center,rgba(212,175,84,0.12),transparent 65%);pointer-events:none;"></div>
+  <div style="position:relative;max-width:1000px;margin:0 auto;text-align:center;">
+    <!-- Card fan animation -->
+    <div style="height:clamp(270px,36vw,380px);display:grid;place-items:end center;margin-bottom:8px;">
+      <div data-fan-wrap style="position:relative;width:1px;height:100%;">
+        <div data-fan data-angle="-36" style="position:absolute;bottom:0;left:0;transform-origin:bottom center;transform:translateX(calc(-50% - 148px)) rotate(-22deg);transition:transform 0.2s ease-out;">
+          <div style="position:relative;width:clamp(118px,17vw,168px);aspect-ratio:5/7;border-radius:12px;background:linear-gradient(157deg,#fdfdfb,#ece9e1);border:1px solid rgba(0,0,0,0.16);box-shadow:0 24px 60px rgba(0,0,0,0.6);overflow:hidden;"><div style="position:absolute;top:7px;left:9px;display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#16161c;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">A</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♠</span></div><div style="position:absolute;inset:0;display:grid;place-items:center;"><span style="font-size:clamp(48px,7.4vw,78px);color:#16161c;line-height:1;">♠</span></div><div style="position:absolute;bottom:7px;right:9px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#16161c;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">A</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♠</span></div></div>
+        </div>
+        <div data-fan data-angle="-18" style="position:absolute;bottom:0;left:0;transform-origin:bottom center;transform:translateX(calc(-50% - 74px)) rotate(-11deg);transition:transform 0.2s ease-out;">
+          <div style="position:relative;width:clamp(118px,17vw,168px);aspect-ratio:5/7;border-radius:12px;background:linear-gradient(157deg,#fdfdfb,#ece9e1);border:1px solid rgba(0,0,0,0.16);box-shadow:0 24px 60px rgba(0,0,0,0.6);overflow:hidden;"><div style="position:absolute;top:7px;left:9px;display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#D6455A;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">K</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♦</span></div><div style="position:absolute;inset:clamp(19px,2.9vw,26px);border:1.5px solid rgba(0,0,0,0.22);border-radius:9px;display:grid;place-items:center;gap:2px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5.2vw,54px);color:#D6455A;line-height:0.85;">K</span><span style="font-size:clamp(20px,3vw,32px);color:#D6455A;line-height:1;">♦</span></div><div style="position:absolute;bottom:7px;right:9px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#D6455A;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">K</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♦</span></div></div>
+        </div>
+        <div data-fan data-angle="0" style="position:absolute;bottom:6px;left:0;transform-origin:bottom center;transform:translateX(-50%) rotate(0deg);transition:transform 0.2s ease-out;z-index:3;">
+          <div style="position:relative;width:clamp(118px,17vw,168px);aspect-ratio:5/7;border-radius:12px;background:linear-gradient(157deg,#fdfefb,#e7f3ec);border:1.5px solid rgba(212,175,84,0.55);box-shadow:0 30px 70px rgba(212,175,84,0.30);overflow:hidden;"><div style="position:absolute;top:7px;left:9px;display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#D4AF54;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">Q</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♥</span></div><div style="position:absolute;inset:clamp(19px,2.9vw,26px);border:1.5px solid rgba(212,175,84,0.5);border-radius:9px;display:grid;place-items:center;gap:2px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5.2vw,54px);color:#D4AF54;line-height:0.85;">Q</span><span style="font-size:clamp(20px,3vw,32px);color:#D4AF54;line-height:1;">♥</span></div><div style="position:absolute;bottom:7px;right:9px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#D4AF54;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">Q</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♥</span></div></div>
+        </div>
+        <div data-fan data-angle="18" style="position:absolute;bottom:0;left:0;transform-origin:bottom center;transform:translateX(calc(-50% + 74px)) rotate(11deg);transition:transform 0.2s ease-out;">
+          <div style="position:relative;width:clamp(118px,17vw,168px);aspect-ratio:5/7;border-radius:12px;background:linear-gradient(157deg,#fdfdfb,#ece9e1);border:1px solid rgba(0,0,0,0.16);box-shadow:0 24px 60px rgba(0,0,0,0.6);overflow:hidden;"><div style="position:absolute;top:7px;left:9px;display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#D6455A;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">J</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♦</span></div><div style="position:absolute;inset:clamp(19px,2.9vw,26px);border:1.5px solid rgba(0,0,0,0.22);border-radius:9px;display:grid;place-items:center;gap:2px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,5.2vw,54px);color:#D6455A;line-height:0.85;">J</span><span style="font-size:clamp(20px,3vw,32px);color:#D6455A;line-height:1;">♦</span></div><div style="position:absolute;bottom:7px;right:9px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#D6455A;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">J</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♦</span></div></div>
+        </div>
+        <div data-fan data-angle="36" style="position:absolute;bottom:0;left:0;transform-origin:bottom center;transform:translateX(calc(-50% + 148px)) rotate(22deg);transition:transform 0.2s ease-out;">
+          <div style="position:relative;width:clamp(118px,17vw,168px);aspect-ratio:5/7;border-radius:12px;background:linear-gradient(157deg,#fdfdfb,#ece9e1);border:1px solid rgba(0,0,0,0.16);box-shadow:0 24px 60px rgba(0,0,0,0.6);overflow:hidden;"><div style="position:absolute;top:7px;left:9px;display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#16161c;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">10</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♣</span></div><div style="position:absolute;inset:clamp(22px,3.2vw,30px) clamp(15px,2.3vw,22px);display:flex;justify-content:space-between;"><div style="display:flex;flex-direction:column;justify-content:space-between;align-items:center;"><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;transform:rotate(180deg);">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;transform:rotate(180deg);">♣</span></div><div style="display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:clamp(5px,0.9vw,9px) 0;"><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;transform:rotate(180deg);">♣</span></div><div style="display:flex;flex-direction:column;justify-content:space-between;align-items:center;"><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;transform:rotate(180deg);">♣</span><span style="font-size:clamp(12px,1.85vw,17px);color:#16161c;line-height:1;transform:rotate(180deg);">♣</span></div></div><div style="position:absolute;bottom:7px;right:9px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.82;color:#16161c;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(15px,2.1vw,20px);">10</span><span style="font-size:clamp(11px,1.6vw,15px);margin-top:1px;">♣</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#F5E4A8;margin-bottom:18px;">O negócio do rakeback</div>
+    <h2 data-reveal style="margin:0 auto;max-width:820px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(32px,5vw,56px);line-height:1.06;letter-spacing:-0.5px;color:#fff;">Jogue com vantagem: um dos rakebacks mais competitivos da região</h2>
+    <p data-reveal style="margin:24px auto 0;max-width:680px;font-size:clamp(15px,1.7vw,17.5px);line-height:1.7;color:#C7CCD4;">O verdadeiro segredo dos jogadores regulares nos aplicativos não é só ganhar potes: é o <strong style="color:#fff;font-weight:700;">Rakeback</strong>. Ao entrar nos nossos clubes parceiros na Suprema e no PPPoker pela indicação do Jhontra, você garante a devolução direta das comissões que gera nas mesas. Oferecemos uma das melhores taxas da América Latina, em salas com ação 24 horas e suporte garantido pela nossa equipe de caixa.</p>
+  </div>
+
+  <div id="clubsGrid" style="max-width:900px;margin:52px auto 0;display:grid;gap:20px;grid-template-columns:1fr;">
+    <div data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:30px;text-align:left;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:#000;border:1px solid rgba(255,255,255,0.12);padding:6px;overflow:hidden;">
+          <img src="img/suprema-logo.png" alt="Suprema Poker" style="width:100%;height:100%;object-fit:contain;" loading="lazy">
+        </div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;color:#fff;">Suprema</div>
+      </div>
+      <div style="font-size:14.5px;color:#C7CCD4;margin-bottom:18px;">Ação 24/7 · Saques rápidos</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:11px;margin-bottom:20px;">
+        <span style="font-size:12.5px;color:#9AA0AA;">ID do clube</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#E7C877;">EM BREVE</span>
+      </div>
+      <a href="https://wa.me/573107114689" class="btn-gold" style="display:flex;align-items:center;justify-content:center;gap:9px;padding:14px;border-radius:12px;font-weight:700;font-size:15px;"><span>✆</span> Entrar na Suprema</a>
+    </div>
+    <div data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:30px;text-align:left;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+        <div style="width:56px;height:56px;border-radius:13px;background:#000;border:1px solid rgba(255,255,255,0.12);padding:6px;overflow:hidden;">
+          <img src="img/pppoker-logo.jpg" alt="PPPoker" style="width:100%;height:100%;object-fit:contain;" loading="lazy">
+        </div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:26px;color:#fff;">PPPoker</div>
+      </div>
+      <div style="font-size:14.5px;color:#C7CCD4;margin-bottom:18px;">O maior app do mundo · Torneios diários</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:11px;margin-bottom:20px;">
+        <span style="font-size:12.5px;color:#9AA0AA;">ID do clube</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#E7C877;">EM BREVE</span>
+      </div>
+      <a href="https://wa.me/573107114689" class="btn-gold" style="display:flex;align-items:center;justify-content:center;gap:9px;padding:14px;border-radius:12px;font-weight:700;font-size:15px;"><span>✆</span> Entrar no PPPoker</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S5 YOUTUBE GRID ===================== -->
+<section id="s5" style="padding:clamp(48px,6vw,84px) 24px;">
+  <div style="max-width:1140px;margin:0 auto;">
+    <div style="text-align:center;max-width:680px;margin:0 auto 48px;">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#F5E4A8;margin-bottom:16px;">Canal no YouTube</div>
+      <h2 data-reveal style="margin:0 0 18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(32px,4.6vw,52px);line-height:1.06;letter-spacing:-0.5px;color:#fff;">Últimas análises de mãos e conteúdo gratuito</h2>
+      <p data-reveal style="margin:0;font-size:clamp(15px,1.7vw,17px);line-height:1.65;color:#C7CCD4;">Toda semana o Jhontra publica análises de mãos reais, resumos de sessão e estratégia avançada. Se inscreva para não perder nenhum.</p>
+    </div>
+    <div id="videosGrid" style="display:grid;gap:22px;grid-template-columns:1fr;">
+      <!-- jt:ultimas-entradas -->
+      <article data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
+        <div style="aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 12px,#0f0f11 12px 24px);position:relative;display:grid;place-items:center;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.08),transparent 60%);"></div>
+          <div style="position:relative;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px;">▶</div>
+          <div style="position:absolute;bottom:10px;right:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9AA0AA;background:rgba(0,0,0,0.6);padding:3px 7px;border-radius:5px;">ANÁLISE</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;color:#7A808A;margin-bottom:9px;">12 JUL 2026</div>
+          <h3 style="margin:0 0 16px;font-size:17px;font-weight:600;line-height:1.35;color:#fff;">Análise de mão: como ler bloqueadores em potes de 3-bet no PLO5</h3>
+          <a href="/pt/blog/" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#E7C877;">Ver análise <span>→</span></a>
+        </div>
+      </article>
+      <article data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
+        <div style="aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 12px,#0f0f11 12px 24px);position:relative;display:grid;place-items:center;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.08),transparent 60%);"></div>
+          <div style="position:relative;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px;">▶</div>
+          <div style="position:absolute;bottom:10px;right:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9AA0AA;background:rgba(0,0,0,0.6);padding:3px 7px;border-radius:5px;">SESSÃO</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;color:#7A808A;margin-bottom:9px;">05 JUL 2026</div>
+          <h3 style="margin:0 0 16px;font-size:17px;font-weight:600;line-height:1.35;color:#fff;">Resumo de sessão: 4 horas de mesas médias na Suprema</h3>
+          <a href="/pt/blog/" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#E7C877;">Ver análise <span>→</span></a>
+        </div>
+      </article>
+      <article data-reveal class="card-hover" style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
+        <div style="aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#131316 0 12px,#0f0f11 12px 24px);position:relative;display:grid;place-items:center;">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at center,rgba(212,175,84,0.08),transparent 60%);"></div>
+          <div style="position:relative;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);display:grid;place-items:center;color:#fff;font-size:18px;padding-left:4px;">▶</div>
+          <div style="position:absolute;bottom:10px;right:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#9AA0AA;background:rgba(0,0,0,0.6);padding:3px 7px;border-radius:5px;">ESTRATÉGIA</div>
+        </div>
+        <div style="padding:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;color:#7A808A;margin-bottom:9px;">28 JUN 2026</div>
+          <h3 style="margin:0 0 16px;font-size:17px;font-weight:600;line-height:1.35;color:#fff;">Estratégia: gestão de banca e variância no Omaha 5</h3>
+          <a href="/pt/blog/" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#E7C877;">Ver análise <span>→</span></a>
+        </div>
+      </article>
+      <!-- /jt:ultimas-entradas -->
+    </div>
+    <div data-reveal style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:44px;">
+      <a href="/pt/blog/" class="btn-ghost" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:12px;font-weight:600;font-size:15px;">Ver todo o conteúdo</a>
+      <a href="#" class="btn-yt" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:12px;font-weight:700;font-size:15px;"><span>▶</span> Se inscrever no YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== S6 CÓMO EMPEZAR ===================== -->
+<section id="s6" style="padding:clamp(48px,6vw,84px) 24px;background:linear-gradient(180deg,#0B0B0C,#0e0e10 60%,#0B0B0C);">
+  <div style="max-width:1080px;margin:0 auto;">
+    <h2 data-reveal style="text-align:center;margin:0 auto 52px;max-width:640px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(32px,4.6vw,54px);line-height:1.06;letter-spacing:-0.5px;color:#fff;">Entre na rede do Jhontra em 3 passos</h2>
+    <div id="stepsGrid" style="display:grid;gap:20px;grid-template-columns:1fr;margin-bottom:44px;">
+      <div data-reveal style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:30px;position:relative;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;line-height:0.8;color:rgba(212,175,84,0.28);position:absolute;top:20px;right:24px;">01</div>
+        <div style="width:52px;height:52px;border-radius:13px;background:rgba(212,175,84,0.1);border:1px solid rgba(212,175,84,0.3);display:grid;place-items:center;color:#E7C877;font-size:22px;margin-bottom:20px;">↓</div>
+        <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#fff;">Baixe o app</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#C7CCD4;">Baixe o Suprema Poker ou o PPPoker no seu aparelho.</p>
+      </div>
+      <div data-reveal style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:30px;position:relative;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;line-height:0.8;color:rgba(212,175,84,0.28);position:absolute;top:20px;right:24px;">02</div>
+        <div style="width:52px;height:52px;border-radius:13px;background:rgba(212,175,84,0.1);border:1px solid rgba(212,175,84,0.3);display:grid;place-items:center;color:#E7C877;font-size:19px;font-family:'IBM Plex Mono',monospace;margin-bottom:20px;">ID</div>
+        <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#fff;">Entre nos clubes</h3>
+        <p style="margin:0 0 14px;font-size:14.5px;line-height:1.6;color:#C7CCD4;">Entre nos nossos clubes com os IDs e códigos de indicação oficiais.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;gap:8px;padding:9px 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:9px;font-size:12.5px;"><span style="color:#9AA0AA;">Suprema</span><span style="font-family:'IBM Plex Mono',monospace;color:#E7C877;">EM BREVE</span></div>
+          <div style="display:flex;justify-content:space-between;gap:8px;padding:9px 12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:9px;font-size:12.5px;"><span style="color:#9AA0AA;">PPPoker</span><span style="font-family:'IBM Plex Mono',monospace;color:#E7C877;">EM BREVE</span></div>
+        </div>
+      </div>
+      <div data-reveal style="background:linear-gradient(180deg,#141417,#0e0e10);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:30px;position:relative;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:56px;line-height:0.8;color:rgba(212,175,84,0.28);position:absolute;top:20px;right:24px;">03</div>
+        <div style="width:52px;height:52px;border-radius:13px;background:rgba(212,175,84,0.1);border:1px solid rgba(212,175,84,0.3);display:grid;place-items:center;color:#E7C877;font-size:22px;margin-bottom:20px;">✆</div>
+        <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#fff;">Ative seu rakeback</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#C7CCD4;">Fale com a nossa equipe pelo WhatsApp. A gente ativa seu rakeback personalizado e libera na hora o acesso aos grupos de estudo e ao conteúdo gratuito.</p>
+      </div>
+    </div>
+    <div data-reveal style="position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(135deg,#1a1710,#12100b);border:1px solid rgba(212,175,84,0.35);padding:clamp(34px,5vw,56px);text-align:center;">
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(212,175,84,0.22),transparent 55%);pointer-events:none;"></div>
+      <div style="position:relative;">
+        <p style="margin:0 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(24px,3.5vw,38px);line-height:1.15;color:#fff;max-width:640px;margin-left:auto;margin-right:auto;">Pronto para jogar com a comunidade de PLO5 mais ativa da América Latina?</p>
+        <a href="https://wa.me/573107114689" class="btn-gold jt-sweep-btn" style="display:inline-flex;align-items:center;gap:11px;padding:18px 32px;border-radius:14px;font-weight:700;font-size:clamp(15px,2vw,18px);box-shadow:0 16px 44px rgba(212,175,84,0.4);"><span style="font-size:20px;">✆</span> Falar no WhatsApp e ativar meu rakeback</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" style="padding:clamp(48px,6vw,84px) 24px;">
+  <div style="max-width:820px;margin:0 auto;">
+    <div data-reveal style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#F5E4A8;margin-bottom:16px;">Perguntas frequentes</div>
+    <h2 data-reveal style="text-align:center;margin:0 0 40px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,50px);line-height:1.05;letter-spacing:-0.5px;color:#fff;">Tiramos suas dúvidas antes de começar</h2>
+    <div data-reveal style="display:flex;flex-direction:column;gap:12px;">
+      <details style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;background:linear-gradient(180deg,#141417,#0e0e10);overflow:hidden;">
+        <summary style="cursor:pointer;padding:20px 22px;font-size:16px;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;">É legal jogar nesses clubes?<span style="color:#E7C877;font-size:20px;flex:0 0 auto;transition:transform .3s;">+</span></summary>
+        <div style="padding:0 22px 22px;font-size:14.5px;line-height:1.65;color:#C7CCD4;">Os clubes privados funcionam no modelo de Home Games ou clubes sociais. A legalidade depende da legislação de cada país. Consulte sempre as regras locais da sua jurisdição antes de jogar.</div>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;background:linear-gradient(180deg,#141417,#0e0e10);overflow:hidden;">
+        <summary style="cursor:pointer;padding:20px 22px;font-size:16px;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;">Como e quando recebo meu rakeback?<span style="color:#E7C877;font-size:20px;flex:0 0 auto;">+</span></summary>
+        <div style="padding:0 22px 22px;font-size:14.5px;line-height:1.65;color:#C7CCD4;">O rakeback é liquidado semanalmente, direto com a nossa equipe de caixa. O valor depende do volume de jogo gerado. Fale com a gente no WhatsApp para saber os detalhes de cada clube.</div>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;background:linear-gradient(180deg,#141417,#0e0e10);overflow:hidden;">
+        <summary style="cursor:pointer;padding:20px 22px;font-size:16px;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;">Existe depósito mínimo para entrar?<span style="color:#E7C877;font-size:20px;flex:0 0 auto;">+</span></summary>
+        <div style="padding:0 22px 22px;font-size:14.5px;line-height:1.65;color:#C7CCD4;">Os depósitos mínimos variam conforme o clube e a plataforma. Em geral dá para começar com valores acessíveis. Nossa equipe te orienta sobre as mesas e os limites que cabem na sua banca.</div>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,0.08);border-radius:14px;background:linear-gradient(180deg,#141417,#0e0e10);overflow:hidden;">
+        <summary style="cursor:pointer;padding:20px 22px;font-size:16px;font-weight:600;color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;">Preciso ter experiência em Omaha 5?<span style="color:#E7C877;font-size:20px;flex:0 0 auto;">+</span></summary>
+        <div style="padding:0 22px 22px;font-size:14.5px;line-height:1.65;color:#C7CCD4;">Não. Temos conteúdo gratuito no YouTube, grupos de estudo e uma comunidade disposta a ajudar. Do iniciante ao jogador avançado, todo mundo encontra seu espaço.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="border-top:1px solid rgba(255,255,255,0.07);background:#0e0e10;padding:clamp(56px,7vw,80px) 24px 40px;">
+  <div style="max-width:1140px;margin:0 auto;">
+    <div id="footerGrid" style="display:grid;gap:40px;grid-template-columns:1fr;margin-bottom:44px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:11px;margin-bottom:16px;">
+          <div style="position:relative;width:32px;height:43px;flex:0 0 auto;">
+            <div style="position:absolute;inset:0;border-radius:5px;background:#17171b;border:1px solid rgba(255,255,255,0.18);transform:rotate(-10deg);transform-origin:bottom left;"></div>
+            <div style="position:absolute;inset:0;border-radius:5px;background:linear-gradient(160deg,#D4AF54,#B8912F);transform:rotate(6deg);overflow:hidden;">
+              <div style="position:absolute;top:2px;left:3px;display:flex;flex-direction:column;align-items:center;line-height:0.7;color:#2A2005;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:9px;">J</span><span style="font-size:6px;">♠</span></div>
+              <div style="position:absolute;bottom:2px;right:3px;transform:rotate(180deg);display:flex;flex-direction:column;align-items:center;line-height:0.7;color:#2A2005;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:9px;">J</span><span style="font-size:6px;">♠</span></div>
+              <svg viewBox="0 0 60 84" width="100%" height="100%" style="position:absolute;inset:0;" aria-hidden="true">
+                <line x1="10" y1="42" x2="50" y2="42" stroke="#2A2005" stroke-width="1.6"/>
+                <g fill="#2A2005"><g id="knaveFt"><path d="M24 13 h12 v3 l-2 -2 -2 2 -2 -2 -2 2 -2 -2 z"/><rect x="24" y="16" width="12" height="2.4"/><circle cx="30" cy="24" r="4.6"/><path d="M24.5 30 q5.5 -3 11 0 l2 10 h-15 z"/><path d="M40 40 l-3.5 -9 5 2.5 z"/></g><use href="#knaveFt" transform="rotate(180 30 42)"/></g>
+              </svg>
+            </div>
+          </div>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;color:#fff;">Jhontra</span>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#9AA0AA;max-width:320px;">Autoridade em Omaha 5 Cartas na América Latina. Conteúdo gratuito, rakeback competitivo e comunidade.</p>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#7A808A;margin-bottom:18px;">Links rápidos</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14.5px;">
+          <a href="#s3" class="foot-link">Sobre o Jhontra</a>
+          <a href="#s4" class="foot-link">Suprema Poker</a>
+          <a href="#s4" class="foot-link">PPPoker</a>
+          <a href="/pt/blog/" class="foot-link">Blog · Análises e conteúdo</a>
+          <a href="https://wa.me/573107114689" class="foot-link">Contato</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#7A808A;margin-bottom:18px;">Redes sociais</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14.5px;">
+          <a href="#" class="foot-link">YouTube</a>
+          <a href="#" class="foot-link">Instagram</a>
+          <a href="#" class="foot-link">X (Twitter)</a>
+          <a href="#" class="foot-link">TikTok</a>
+          <a href="#" class="foot-link">Telegram</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#7A808A;margin-bottom:18px;">Legal</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:14.5px;">
+          <a href="#" class="foot-link">Termos e Condições</a>
+          <a href="#" class="foot-link">Política de Privacidade</a>
+          <a href="#" class="foot-link">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:20px 22px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;margin-bottom:24px;">
+      <div style="flex:0 0 auto;width:50px;height:50px;border-radius:12px;background:rgba(255,77,77,0.1);border:1px solid rgba(255,77,77,0.35);display:grid;place-items:center;font-weight:800;font-size:16px;color:#FF8080;">18+</div>
+      <p style="margin:0;flex:1 1 260px;font-size:13px;line-height:1.55;color:#9AA0AA;">Poker é um jogo para maiores de 18 anos. Jogue com responsabilidade. Canais de ajuda: <a href="https://www.jogadoresanonimos.org.br" style="color:#E7C877;">jogadoresanonimos.org.br</a> · <a href="https://www.cvv.org.br" style="color:#E7C877;">cvv.org.br</a></p>
+    </div>
+    <p style="margin:0 0 12px;font-size:12.5px;line-height:1.6;color:#7A808A;">Este site contém links de afiliado. O Jhontra recebe uma comissão pelos jogadores que se cadastram pelos códigos de indicação. Isso não tem custo adicional nenhum para você.</p>
+    <p style="margin:0;font-size:12.5px;line-height:1.6;color:#7A808A;">Conteúdo informativo e gratuito. Resultados no poker dependem de estudo e disciplina.</p>
+    <div style="margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:#5F646D;" id="footerYear"></div>
+  </div>
+</footer>
+
+<!-- ===================== FLOATING WHATSAPP ===================== -->
+<a id="fab" href="https://wa.me/573107114689" aria-label="Falar no WhatsApp" style="position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:10px;background:#00E676;color:#2A2005;padding:15px 18px;border-radius:100px;font-weight:700;font-size:15px;box-shadow:0 12px 34px rgba(212,175,84,0.5);animation:jt-pulse 2.6s infinite;transition:opacity 0.3s ease,transform .2s;" onmouseover="this.style.background='#33ED8F';this.style.transform='scale(1.05)'" onmouseout="this.style.background='#00E676';this.style.transform='scale(1)'">
+  <span style="font-size:22px;">✆</span> <span id="fabLabel">WhatsApp</span>
+</a>
+
+<!-- ===================== STICKY MOBILE CTA ===================== -->
+<div id="mobileBar" style="position:fixed;left:0;right:0;bottom:0;z-index:82;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(11,11,12,0),rgba(11,11,12,0.96) 34%);transform:translateY(150%);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);">
+  <a href="https://wa.me/573107114689" class="jt-sweep-btn" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#00E676;color:#2A2005;padding:16px;border-radius:14px;font-weight:800;font-size:16px;box-shadow:0 12px 34px rgba(212,175,84,0.45);"><span style="font-size:20px;">✆</span> Ativar meu rakeback</a>
+</div>
+
+<!-- ===================== COOKIE BANNER ===================== -->
+<div id="cookieBanner" role="region" aria-label="Aviso de cookies" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:85;max-width:520px;margin:0 auto;background:linear-gradient(180deg,#161619,#101012);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px 22px;box-shadow:0 30px 80px rgba(0,0,0,0.7);">
+  <p style="margin:0 0 16px;font-size:13.5px;line-height:1.6;color:#C7CCD4;">Usamos cookies para melhorar sua experiência e analisar o tráfego do site. Você pode aceitar ou recusar. Consulte nossa <a href="#" style="color:#E7C877;">Política de Cookies</a>.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button type="button" id="cookieAccept" class="btn-gold" style="flex:1 1 auto;border:none;cursor:pointer;padding:12px 18px;border-radius:10px;font-family:'Hanken Grotesk';font-weight:700;font-size:14px;">Aceitar</button>
+    <button type="button" id="cookieReject" style="flex:1 1 auto;cursor:pointer;padding:12px 18px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);color:#E2E8F0;font-family:'Hanken Grotesk';font-weight:600;font-size:14px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">Recusar</button>
+  </div>
+</div>
+
+</div><!-- /app -->
+
+<script>
+(function(){
+  'use strict';
+
+  // ---- Footer year ----
+  document.getElementById('footerYear').textContent = '© ' + new Date().getFullYear() + ' Jhontra · PLO5 · Todos los derechos reservados.';
+
+  // ---- Age gate ----
+  var ageGate = document.getElementById('ageGate');
+  try {
+    if (localStorage.getItem('jt_age_ok') !== '1') {
+      ageGate.style.display = 'grid';
+    }
+  } catch(e) { ageGate.style.display = 'grid'; }
+
+  document.getElementById('ageConfirm').addEventListener('click', function(){
+    try { localStorage.setItem('jt_age_ok', '1'); } catch(e){}
+    ageGate.style.display = 'none';
+  });
+
+  // ---- Cookie banner ----
+  var cookieBanner = document.getElementById('cookieBanner');
+  try {
+    if (!localStorage.getItem('jt_cookie')) {
+      setTimeout(function(){ cookieBanner.style.display = 'block'; }, 900);
+    }
+  } catch(e){}
+
+  document.getElementById('cookieAccept').addEventListener('click', function(){
+    try { localStorage.setItem('jt_cookie', 'accepted'); } catch(e){}
+    cookieBanner.style.display = 'none';
+  });
+  document.getElementById('cookieReject').addEventListener('click', function(){
+    try { localStorage.setItem('jt_cookie', 'rejected'); } catch(e){}
+    cookieBanner.style.display = 'none';
+  });
+
+  // ---- Mobile menu ----
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileBtn = document.getElementById('mobileBtn');
+  var isOpen = false;
+
+  mobileBtn.addEventListener('click', function(){
+    isOpen = !isOpen;
+    mobileMenu.style.display = isOpen ? 'block' : 'none';
+    mobileBtn.textContent = isOpen ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(function(link){
+    link.addEventListener('click', function(){
+      isOpen = false;
+      mobileMenu.style.display = 'none';
+      mobileBtn.textContent = '☰';
+    });
+  });
+
+  // ---- Responsive layout ----
+  function applyResponsive(){
+    var wide = window.matchMedia('(min-width: 860px)').matches;
+    var mid = window.matchMedia('(min-width: 620px)').matches;
+
+    document.getElementById('desktopNav').style.display = wide ? 'flex' : 'none';
+    document.getElementById('desktopCta').style.display = wide ? 'inline-flex' : 'none';
+    mobileBtn.style.display = wide ? 'none' : 'grid';
+    if (wide) { mobileMenu.style.display = 'none'; isOpen = false; mobileBtn.textContent = '☰'; }
+
+    document.getElementById('aboutGrid').style.gridTemplateColumns = wide ? '1fr 1fr' : '1fr';
+    document.getElementById('clubsGrid').style.gridTemplateColumns = wide ? '1fr 1fr' : '1fr';
+    document.getElementById('statsGrid').style.gridTemplateColumns = wide ? 'repeat(3,1fr)' : 'repeat(2,1fr)';
+    document.getElementById('testimonialsGrid').style.gridTemplateColumns = wide ? 'repeat(3,1fr)' : (mid ? 'repeat(2,1fr)' : '1fr');
+    document.getElementById('videosGrid').style.gridTemplateColumns = wide ? 'repeat(3,1fr)' : (mid ? 'repeat(2,1fr)' : '1fr');
+    document.getElementById('stepsGrid').style.gridTemplateColumns = wide ? 'repeat(3,1fr)' : (mid ? 'repeat(2,1fr)' : '1fr');
+    document.getElementById('footerGrid').style.gridTemplateColumns = wide ? '1.4fr 1fr 1fr 1fr' : (mid ? '1fr 1fr' : '1fr');
+    document.getElementById('fabLabel').style.display = mid ? 'inline' : 'none';
+  }
+  applyResponsive();
+  window.addEventListener('resize', applyResponsive);
+
+  // ---- Reveal on scroll ----
+  var revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          var el = e.target;
+          var sibs = el.parentElement ? Array.from(el.parentElement.querySelectorAll(':scope > [data-reveal]')) : [el];
+          var idx = Math.max(0, sibs.indexOf(el));
+          el.style.transitionDelay = Math.min(idx * 90, 360) + 'ms';
+          el.classList.add('revealed');
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('revealed'); });
+  }
+
+  // ---- Animated counters ----
+  function runCount(el){
+    var target = parseFloat(el.dataset.count) || 0;
+    var suf = el.dataset.suffix || '';
+    var dur = 1500, t0 = performance.now();
+    function step(t){
+      var p = Math.min(1, (t - t0) / dur);
+      var ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * ease).toLocaleString('es') + suf;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(function(el){ co.observe(el); });
+  } else {
+    document.querySelectorAll('[data-count]').forEach(runCount);
+  }
+
+  // ---- Sticky mobile CTA bar ----
+  var bar = document.getElementById('mobileBar');
+  var fab = document.getElementById('fab');
+  function barScroll(){
+    var mobile = window.matchMedia('(max-width: 620px)').matches;
+    var past = window.pageYOffset > (window.innerHeight * 0.72);
+    var show = mobile && past;
+    bar.style.transform = show ? 'translateY(0)' : 'translateY(150%)';
+    fab.style.opacity = show ? '0' : '1';
+    fab.style.pointerEvents = show ? 'none' : 'auto';
+  }
+  window.addEventListener('scroll', barScroll, { passive: true });
+  barScroll();
+
+  // ---- Scroll-driven parallax ----
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    function prog(el){
+      var r = el.getBoundingClientRect();
+      var vh = window.innerHeight || 1;
+      return Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+    }
+    window.addEventListener('scroll', function(){
+      var chip = document.querySelector('[data-spin]');
+      if (chip) {
+        var p = prog(chip);
+        chip.style.transform = 'rotate(' + (p * 150).toFixed(2) + 'deg) scale(' + (0.94 + p * 0.12).toFixed(3) + ')';
+      }
+      var wrap = document.querySelector('[data-fan-wrap]');
+      if (wrap) {
+        var p2 = prog(wrap);
+        var narrow = window.matchMedia('(max-width: 620px)').matches;
+        var gap = narrow ? 118 : 205;
+        document.querySelectorAll('[data-fan]').forEach(function(card){
+          var base = parseFloat(card.dataset.angle) || 0;
+          var norm = base / 36;
+          var spread = 0.72 + p2 * 0.7;
+          var x = norm * gap * spread;
+          var rot = base * (0.62 + p2 * 0.55);
+          var lift = -Math.abs(norm) * 6 - p2 * 16;
+          card.style.transform = 'translateX(calc(-50% + ' + x.toFixed(1) + 'px)) rotate(' + rot.toFixed(2) + 'deg) translateY(' + lift.toFixed(1) + 'px)';
+        });
+      }
+    }, { passive: true });
+  }
+
+})();
+</script>
+</body>
+</html>

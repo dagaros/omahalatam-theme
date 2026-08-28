@@ -20,7 +20,19 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+ * Portada por idioma. La version brasilena vive en front-page-pt.html, con el
+ * mismo marcado y el texto adaptado a pt-BR. Si el archivo no existe, cae a la
+ * version en espanol en vez de dejar la portada en blanco.
+ */
 $jt_static_home = get_template_directory() . '/front-page.html';
+
+if ( function_exists( 'jt_is_pt' ) && jt_is_pt() ) {
+	$jt_home_pt = get_template_directory() . '/front-page-pt.html';
+	if ( file_exists( $jt_home_pt ) ) {
+		$jt_static_home = $jt_home_pt;
+	}
+}
 
 if ( file_exists( $jt_static_home ) ) {
 
