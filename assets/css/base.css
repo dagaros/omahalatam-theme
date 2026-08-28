@@ -36,3 +36,11 @@ img{max-width:100%;height:auto;display:block}
 .jt-btn-ghost:hover{border-color:rgba(212,175,84,0.5);color:#F5E4A8}
 .jt-btn-sm{padding:14px;border-radius:12px;font-size:14.5px}
 .jt-btn-full{width:100%;justify-content:center}
+
+
+/* ── Selector de idioma (Polylang) ───────────────────────────────── */
+.jt-lang{display:inline-flex;align-items:center;gap:2px;border:1px solid rgba(212,175,84,.28);border-radius:9px;padding:3px;background:rgba(212,175,84,.06)}
+.jt-lang__item{font-family:var(--jt-mono,"IBM Plex Mono",ui-monospace,monospace);font-size:11.5px;font-weight:500;letter-spacing:.06em;color:#9AA0AA;padding:5px 9px;border-radius:6px;line-height:1;text-decoration:none;transition:.16s}
+.jt-lang__item:hover{color:#F5E4A8;background:rgba(212,175,84,.12)}
+.jt-lang__item.is-active{color:#2A2005;background:linear-gradient(180deg,#E7C877,#D4AF54);font-weight:600}
+@media (max-width:640px){.jt-lang--nav{display:none}}
