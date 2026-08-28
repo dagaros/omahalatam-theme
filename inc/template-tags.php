@@ -28,12 +28,12 @@ function jt_breadcrumbs() {
 	if ( is_front_page() ) return;
 
 	echo '<nav aria-label="Ruta de navegación" class="jt-crumbs">';
-	echo '<a href="' . esc_url( home_url( '/' ) ) . '">Inicio</a>';
+	echo '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( jt_t( 'crumb_inicio' ) ) . '</a>';
 	echo '<span class="jt-crumbs__sep">›</span>';
 
 	if ( is_single() ) {
 
-		echo '<a href="' . esc_url( home_url( '/blog/' ) ) . '">Blog</a>';
+		echo '<a href="' . esc_url( home_url( '/blog/' ) ) . '">' . esc_html( jt_t( 'crumb_blog' ) ) . '</a>';
 		$cats = get_the_category();
 		if ( ! empty( $cats ) ) {
 			echo '<span class="jt-crumbs__sep">›</span>';
@@ -49,23 +49,23 @@ function jt_breadcrumbs() {
 
 	} elseif ( is_category() ) {
 
-		echo '<a href="' . esc_url( home_url( '/blog/' ) ) . '">Blog</a>';
+		echo '<a href="' . esc_url( home_url( '/blog/' ) ) . '">' . esc_html( jt_t( 'crumb_blog' ) ) . '</a>';
 		echo '<span class="jt-crumbs__sep">›</span>';
 		echo '<span class="jt-crumbs__current">' . single_cat_title( '', false ) . '</span>';
 
 	} elseif ( is_search() ) {
 
-		echo '<a href="' . esc_url( home_url( '/blog/' ) ) . '">Blog</a>';
+		echo '<a href="' . esc_url( home_url( '/blog/' ) ) . '">' . esc_html( jt_t( 'crumb_blog' ) ) . '</a>';
 		echo '<span class="jt-crumbs__sep">›</span>';
-		echo '<span class="jt-crumbs__current">Búsqueda</span>';
+		echo '<span class="jt-crumbs__current">' . esc_html( jt_t( 'crumb_busca' ) ) . '</span>';
 
 	} elseif ( is_404() ) {
 
-		echo '<span class="jt-crumbs__current">Página no encontrada</span>';
+		echo '<span class="jt-crumbs__current">' . esc_html( jt_t( 'crumb_404' ) ) . '</span>';
 
 	} else {
 
-		echo '<span class="jt-crumbs__current">Blog</span>';
+		echo '<span class="jt-crumbs__current">' . esc_html( jt_t( 'crumb_blog' ) ) . '</span>';
 	}
 
 	echo '</nav>';
@@ -195,13 +195,17 @@ function jt_anchor_url( $key ) {
 function jt_nav_items() {
 	$en_blog = is_home() || is_archive() || is_single() || is_search();
 
+	$blog = function_exists( 'pll_home_url' ) && jt_is_pt()
+		? trailingslashit( pll_home_url( 'pt' ) ) . 'blog/'
+		: home_url( '/blog/' );
+
 	return apply_filters( 'jt_nav_items', array(
-		array( 'label' => 'Método',          'url' => jt_anchor_url( 'metodo' ),    'active' => false ),
-		array( 'label' => 'Jhontra',         'url' => jt_anchor_url( 'jhontra' ),   'active' => false ),
-		array( 'label' => 'Clubes',          'url' => jt_anchor_url( 'clubes' ),    'active' => false ),
-		array( 'label' => 'Contenido',       'url' => jt_anchor_url( 'contenido' ), 'active' => false ),
-		array( 'label' => 'Blog / Noticias', 'url' => home_url( '/blog/' ),         'active' => $en_blog ),
-		array( 'label' => 'Empezar',         'url' => jt_anchor_url( 'empezar' ),   'active' => false ),
+		array( 'label' => jt_t( 'nav_metodo' ),    'url' => jt_anchor_url( 'metodo' ),    'active' => false ),
+		array( 'label' => jt_t( 'nav_jhontra' ),   'url' => jt_anchor_url( 'jhontra' ),   'active' => false ),
+		array( 'label' => jt_t( 'nav_clubes' ),    'url' => jt_anchor_url( 'clubes' ),    'active' => false ),
+		array( 'label' => jt_t( 'nav_contenido' ), 'url' => jt_anchor_url( 'contenido' ), 'active' => false ),
+		array( 'label' => jt_t( 'nav_blog' ),      'url' => $blog,                        'active' => $en_blog ),
+		array( 'label' => jt_t( 'nav_empezar' ),   'url' => jt_anchor_url( 'empezar' ),   'active' => false ),
 	) );
 }
 
