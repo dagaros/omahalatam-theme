@@ -129,3 +129,61 @@ function jt_language_switcher( $clase = '' ) {
 
 	echo '</div>';
 }
+
+/**
+ * Idiomas que SI tienen traduccion del contenido actual.
+ *
+ * A diferencia de jt_languages(), aqui se ocultan los idiomas sin traduccion,
+ * porque un hreflang que apunta a la portada en vez de a la traduccion real
+ * es una senal falsa para Google.
+ */
+function jt_languages_translated() {
+
+	if ( ! function_exists( 'pll_the_languages' ) ) {
+		return array();
+	}
+
+	$raw = pll_the_languages( array(
+		'raw'                    => 1,
+		'hide_if_no_translation' => 1,
+		'display_names_as'       => 'slug',
+	) );
+
+	return is_array( $raw ) ? $raw : array();
+}
+
+/**
+ * Emite hreflang reciproco + x-default en todas las plantillas PHP.
+ *
+ * Polylang free no lo esta imprimiendo en este sitio, asi que el tema se hace
+ * cargo. La portada no pasa por aqui: lleva su propia inyeccion en
+ * front-page.php, porque se sirve con readfile() y nunca llega a wp_head().
+ */
+function jt_hreflang_tags() {
+
+	if ( is_404() || is_search() || is_paged() ) {
+		return;
+	}
+
+	$langs = jt_languages_translated();
+	if ( count( $langs ) < 2 ) {
+		return;
+	}
+
+	$default = function_exists( 'pll_default_language' ) ? pll_default_language( 'slug' ) : 'es';
+
+	foreach ( $langs as $l ) {
+		$slug = isset( $l['slug'] ) ? $l['slug'] : '';
+		$url  = isset( $l['url'] ) ? $l['url'] : '';
+		if ( ! $slug || ! $url ) {
+			continue;
+		}
+
+		printf( '<link rel="alternate" hreflang="%s" href="%s">' . "\n", esc_attr( $slug ), esc_url( $url ) );
+
+		if ( $slug === $default ) {
+			printf( '<link rel="alternate" hreflang="x-default" href="%s">' . "\n", esc_url( $url ) );
+		}
+	}
+}
+add_action( 'wp_head', 'jt_hreflang_tags', 4 );
