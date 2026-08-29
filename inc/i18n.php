@@ -110,6 +110,49 @@ function jt_t( $key ) {
 		'ir_portada'    => array( 'es' => 'Ir a la portada', 'pt' => 'Ir para a página inicial' ),
 		'ver_blog'      => array( 'es' => 'Ver el blog',     'pt' => 'Ver o blog' ),
 		'ver_todo'      => array( 'es' => 'Ver todo',        'pt' => 'Ver tudo' ),
+
+		// Plantillas (single, archive, header, 404)
+		's_cta_h'        => array( 'es' => 'Empieza a jugar Omaha hoy', 'pt' => 'Comece a jogar Omaha hoje' ),
+		's_cta_p'        => array( 'es' => 'Únete a los clubes de Jhontra en Suprema y PPPoker', 'pt' => 'Entre nos clubes do Jhontra na Suprema e no PPPoker' ),
+		's_cta_b'        => array( 'es' => 'Registrarme con Jhontra', 'pt' => 'Quero entrar com o Jhontra' ),
+		's_etiquetas'    => array( 'es' => 'ETIQUETAS:', 'pt' => 'TAGS:' ),
+		's_compartir'    => array( 'es' => '¿Te sirvió? Compártelo', 'pt' => 'Curtiu? Compartilhe' ),
+		's_sh_wa'        => array( 'es' => 'Compartir en WhatsApp', 'pt' => 'Compartilhar no WhatsApp' ),
+		's_sh_x'         => array( 'es' => 'Compartir en X', 'pt' => 'Compartilhar no X' ),
+		's_sh_tg'        => array( 'es' => 'Compartir en Telegram', 'pt' => 'Compartilhar no Telegram' ),
+		's_sh_copy'      => array( 'es' => 'Copiar enlace', 'pt' => 'Copiar link' ),
+		's_autor'        => array( 'es' => 'Sobre el autor', 'pt' => 'Sobre o autor' ),
+		's_entrenar'     => array( 'es' => 'Entrenar con Jhontra', 'pt' => 'Treinar com o Jhontra' ),
+		's_toc'          => array( 'es' => 'En este artículo', 'pt' => 'Neste artigo' ),
+		's_sala'         => array( 'es' => 'Sala afiliada', 'pt' => 'Sala parceira' ),
+		's_bono'         => array( 'es' => 'Mejor bono de bienvenida', 'pt' => 'Melhor bônus de boas-vindas' ),
+		's_verbono'      => array( 'es' => 'Ver mi bono', 'pt' => 'Ver meu bônus' ),
+		's_ad1'          => array( 'es' => 'ESPACIO PUBLICITARIO · 300×600', 'pt' => 'ESPAÇO PUBLICITÁRIO · 300×600' ),
+		's_ad2'          => array( 'es' => 'Banner vertical de sala afiliada', 'pt' => 'Banner vertical de sala parceira' ),
+		's_sigue'        => array( 'es' => 'Sigue leyendo', 'pt' => 'Continue lendo' ),
+		'a_kicker'       => array( 'es' => 'Análisis · Noticias · Estrategia', 'pt' => 'Análises · Notícias · Estratégia' ),
+		'a_leer'         => array( 'es' => 'Leer artículo completo', 'pt' => 'Ler o artigo completo' ),
+		'a_pag'          => array( 'es' => 'Paginación', 'pt' => 'Paginação' ),
+		'a_prox'         => array( 'es' => 'Próximamente', 'pt' => 'Em breve' ),
+		'a_prox_p'       => array( 'es' => 'Estamos preparando contenido de alto nivel sobre PLO5.', 'pt' => 'Estamos preparando conteúdo de alto nível sobre PLO5.' ),
+		'a_blogde2'      => array( 'es' => 'El Blog de', 'pt' => 'O Blog de' ),
+		'a_result2'      => array( 'es' => 'Resultados:', 'pt' => 'Resultados:' ),
+		'a_todos2'       => array( 'es' => 'Todos', 'pt' => 'Todos' ),
+		'a_por2'         => array( 'es' => 'Por Jhontra', 'pt' => 'Por Jhontra' ),
+		'h_edad_q'       => array( 'es' => '¿Eres mayor de 18 años?', 'pt' => 'Você tem mais de 18 anos?' ),
+		'h_edad_si'      => array( 'es' => 'Sí, soy mayor de 18', 'pt' => 'Sim, tenho mais de 18' ),
+		'h_edad_no'      => array( 'es' => 'Salir del sitio', 'pt' => 'Sair do site' ),
+		'h_edad_lbl'     => array( 'es' => 'Verificación de edad', 'pt' => 'Verificação de idade' ),
+		'h_inicio'       => array( 'es' => 'Jhontra — Inicio', 'pt' => 'Jhontra — Início' ),
+		'h_menu'         => array( 'es' => 'Abrir menú', 'pt' => 'Abrir menu' ),
+		'h_wa_mob'       => array( 'es' => 'Escríbenos por WhatsApp', 'pt' => 'Fale com a gente no WhatsApp' ),
+		'coach'          => array( 'es' => 'Coach PLO5', 'pt' => 'Coach PLO5' ),
+		'e_404'          => array( 'es' => 'Error 404', 'pt' => 'Erro 404' ),
+		'e_mano_a'       => array( 'es' => 'Esta mano', 'pt' => 'Esta mão' ),
+		'e_mano_b'       => array( 'es' => 'no existe', 'pt' => 'não existe' ),
+		'e_wa'           => array( 'es' => 'Escribir por WhatsApp', 'pt' => 'Falar no WhatsApp' ),
+		'e_reciente'     => array( 'es' => 'Lo más reciente del blog', 'pt' => 'O mais recente do blog' ),
+		'f_wa_lbl'       => array( 'es' => 'Contactar por WhatsApp', 'pt' => 'Falar no WhatsApp' ),
 	);
 
 	$lang = jt_lang();
@@ -242,3 +285,20 @@ function jt_hreflang_tags() {
 	}
 }
 add_action( 'wp_head', 'jt_hreflang_tags', 4 );
+
+/**
+ * Canal de YouTube de OmahaLatam.
+ *
+ * Centralizado igual que jt_whatsapp_url(): si algun dia cambia el handle,
+ * se toca aqui y no en cinco plantillas.
+ */
+function jt_youtube_url() {
+	return apply_filters( 'jt_youtube_url', 'https://www.youtube.com/@OmahaLatam' );
+}
+
+/**
+ * Canal de YouTube con el parametro de suscripcion ya puesto.
+ */
+function jt_youtube_subscribe_url() {
+	return jt_youtube_url() . '?sub_confirmation=1';
+}
