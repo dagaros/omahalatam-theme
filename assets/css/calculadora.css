@@ -93,7 +93,7 @@
 .jt-target .pend{color:#00E676}
 .jt-picker-actions{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}
 .jt-deck{display:grid;grid-template-rows:repeat(4,1fr);gap:5px}
-.jt-deck-row{display:grid;grid-template-columns:repeat(13,1fr);gap:5px}
+.jt-deck-row{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:5px}
 .jt-dcard{aspect-ratio:.74;border-radius:5px;background:linear-gradient(165deg,#1d1d26,#131318);
   border:1px solid rgba(226,232,240,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;
   cursor:pointer;font-family:var(--jt-disp,'Bricolage Grotesque',serif);font-weight:800;transition:.13s;user-select:none;padding:2px}
@@ -152,22 +152,61 @@
 .jt-toast.is-on{opacity:1;transform:translate(-50%,0)}
 .jt-calc-article{margin-top:44px}
 
-@media(max-width:1080px){ .jt-calc{grid-template-columns:1fr} .jt-panel{position:static} .jt-kbd{display:none} }
-@media(max-width:760px){
-  .jt-calc{--card-w:37px;--card-h:52px}
-  .jt-card .r{font-size:21px} .jt-card .p{font-size:14px}
+/* ─────────────────────────────────────────────────────────────
+   Tramos responsivos
+
+   La mesa ovalada coloca los asientos en posicion absoluta, y en
+   anchos medianos los de los extremos se salian del contenedor y
+   provocaban scroll horizontal. Por eso la regla es simple: si el
+   layout es de una sola columna, la mesa pasa a lista vertical.
+   ───────────────────────────────────────────────────────────── */
+
+/* Una columna: tablet y movil */
+@media(max-width:1080px){
+  /* minmax(0,...) es lo que permite que la columna se encoja por
+     debajo del ancho natural de su contenido. Sin esto el mazo de
+     13 cartas impone 421px y la pagina desborda en moviles. */
+  .jt-calc{grid-template-columns:minmax(0,1fr)}
+  .jt-panel{position:static}
+  .jt-kbd{display:none}
+
+  /* la mesa deja de ser ovalada y pasa a lista */
   .jt-felt-outer{padding:14px 12px}
   .jt-felt{height:auto;border-radius:14px;display:flex;flex-direction:column;gap:9px;padding:14px 10px;box-shadow:none;
     background:radial-gradient(140% 60% at 50% 0%,var(--felt-1),var(--felt-2) 70%,var(--felt-3) 100%)}
   .jt-felt::after{display:none}
   .jt-board-zone{position:static;transform:none;order:-1;background:rgba(0,0,0,.28);border:1px solid rgba(245,228,168,.2);border-radius:11px;padding:12px 8px}
-  .jt-feltmark span{font-size:24px}
   .jt-seat{position:static!important;transform:none!important;width:100%}
   .jt-seat-inner{min-width:0;display:flex;align-items:center;gap:10px;padding:9px 11px}
   .jt-seat-head{margin:0;flex-direction:column;align-items:flex-start;gap:4px}
   .jt-seat-eq{margin:0}
-  .jt-hand{margin-left:auto}
+  .jt-hand{margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
   .jt-eqbar-mini{display:none}
-  .jt-calc-tabs a{flex:1;text-align:center;padding:12px 14px;font-size:13px}
   .jt-board-slots{flex-wrap:wrap}
+}
+
+/* Movil */
+@media(max-width:760px){
+  .jt-calc{--card-w:37px;--card-h:52px}
+  .jt-card .r{font-size:21px} .jt-card .p{font-size:14px}
+  .jt-feltmark span{font-size:24px}
+  .jt-calc-tabs a{flex:1;text-align:center;padding:12px 14px;font-size:13px}
+  .jt-tools{grid-template-columns:1fr}
+}
+
+/* Movil estrecho: el mazo de 13 columnas es lo primero que aprieta */
+@media(max-width:430px){
+  .jt-calc{--card-w:32px;--card-h:45px}
+  .jt-card .r{font-size:18px} .jt-card .p{font-size:12px}
+  .jt-felt-outer{padding:10px 8px}
+  .jt-picker{padding:11px}
+  .jt-deck,.jt-deck-row{gap:3px}
+  .jt-dcard span:first-child{font-size:clamp(9px,3.1vw,15px)}
+  .jt-dcard span:last-child{font-size:clamp(7px,2.4vw,11px)}
+  .jt-panel{padding:14px}
+  .jt-res-pct{font-size:22px}
+  .jt-calc-tabs{gap:5px}
+  .jt-calc-tabs a{padding:11px 6px;font-size:12px;letter-spacing:.04em}
+  .jt-street-gap{margin:0 2px}
+  .jt-board-slots{gap:5px}
 }
