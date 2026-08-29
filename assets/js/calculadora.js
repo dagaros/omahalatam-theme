@@ -167,9 +167,15 @@
     target = order[k]; pendingRank = null; draw();
   }
   function backspace() {
+    var s;
     if (target.t === 'board') { if (board.length) { board.pop(); reset(); draw(); return; } }
-    else { var s = seats[target.i]; if (s.cards.length) { s.cards.pop(); reset(); draw(); return; } }
+    else { s = seats[target.i]; if (s.cards.length) { s.cards.pop(); reset(); draw(); return; } }
+    // El sitio actual esta vacio: normalmente es porque acabamos de completar
+    // la mano anterior y el foco salto solo. Retrocedemos Y borramos, para que
+    // no haga falta pulsar dos veces.
     moveTarget(-1);
+    if (target.t === 'board') { if (board.length) { board.pop(); reset(); draw(); } }
+    else { s = seats[target.i]; if (s.cards.length) { s.cards.pop(); reset(); draw(); } }
   }
   function reset() {
     seats.forEach(function (s) {
