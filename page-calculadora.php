@@ -27,7 +27,7 @@ $uri = get_template_directory_uri();
 $base = jt_calc_base();
 ?>
 
-<div class="jt-wrap">
+<div class="jt-wrap jt-calc-wrap">
 
   <?php jt_breadcrumbs(); ?>
 
