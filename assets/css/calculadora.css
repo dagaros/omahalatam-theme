@@ -68,7 +68,12 @@
 .jt-toggle{margin-left:3px;width:17px;height:17px;border-radius:4px;border:1px solid rgba(226,232,240,.09);background:none;
   color:#63676F;font-size:11px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.15s}
 .jt-toggle:hover{border-color:var(--gold);color:var(--gold)}
-.jt-hand{display:flex;gap:4px}
+/* Las cartas de la mano van mas pequenas que las de la mesa: con seis cartas
+   por jugador el asiento medía 320px y los laterales se comian el fieltro y la
+   marca de agua. Redefinir las variables aqui las hereda .jt-card. */
+.jt-hand{display:flex;gap:4px;--card-w:34px;--card-h:47px}
+.jt-hand .jt-card .r{font-size:19px}
+.jt-hand .jt-card .p{font-size:13px}
 .jt-eqbar-mini{height:3px;border-radius:2px;background:rgba(226,232,240,.1);margin-top:7px;overflow:hidden}
 .jt-eqbar-mini i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-p));width:0;transition:width .25s}
 
@@ -167,6 +172,9 @@
 
 /* Una columna: tablet y movil */
 @media(max-width:1080px){
+  .jt-hand{--card-w:46px;--card-h:64px}
+  .jt-hand .jt-card .r{font-size:26px}
+  .jt-hand .jt-card .p{font-size:17px}
   /* minmax(0,...) es lo que permite que la columna se encoja por
      debajo del ancho natural de su contenido. Sin esto el mazo de
      13 cartas impone 421px y la pagina desborda en moviles. */
@@ -193,6 +201,10 @@
 @media(max-width:760px){
   .jt-calc-wrap{padding:0 14px}
   .jt-calc{--card-w:37px;--card-h:52px}
+  /* en lista vertical la mano recupera el tamano normal */
+  .jt-hand{--card-w:37px;--card-h:52px}
+  .jt-hand .jt-card .r{font-size:21px}
+  .jt-hand .jt-card .p{font-size:14px}
   .jt-card .r{font-size:21px} .jt-card .p{font-size:14px}
   .jt-feltmark span{font-size:24px}
   .jt-calc-tabs a{flex:1;text-align:center;padding:12px 14px;font-size:13px}
@@ -203,6 +215,9 @@
 @media(max-width:430px){
   .jt-calc-wrap{padding:0 10px}
   .jt-calc{--card-w:32px;--card-h:45px}
+  .jt-hand{--card-w:32px;--card-h:45px}
+  .jt-hand .jt-card .r{font-size:18px}
+  .jt-hand .jt-card .p{font-size:12px}
   .jt-card .r{font-size:18px} .jt-card .p{font-size:12px}
   .jt-felt-outer{padding:10px 8px}
   .jt-picker{padding:11px}
