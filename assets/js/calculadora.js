@@ -23,15 +23,14 @@
   var glyph = function (i) { return { r: RANKS[12 - i % 13], p: SUITS[(i/13)|0].g, c: SUITS[(i/13)|0].c }; };
   var label = function (i) { return RANKS[12 - i % 13] + SUITS[(i/13)|0].k; };
 
-  // Posiciones alrededor del ovalo, en % del alto y ancho de la mesa.
+  // Posiciones alrededor del ovalo, en % del ancho y alto de la mesa.
   //
   // Hexagono simetrico: UTG centrado arriba, BTN centrado abajo y dos pares
-  // laterales. Los laterales van a 19% y 81% porque el asiento se centra en su
-  // punto y en PLO6 mide cerca de 320px: mas afuera se saldria de la caja.
-  // Las filas de arriba y de abajo se separan del centro para no tapar el
-  // fieltro ni la marca de agua, y para que no choquen con UTG ni con BTN.
-  var POS = [{id:'UTG',x:50,y:1},{id:'HJ',x:81,y:27},{id:'CO',x:81,y:75},
-             {id:'BTN',x:50,y:99},{id:'SB',x:19,y:75},{id:'BB',x:19,y:27}];
+  // laterales. Los laterales van a 17% y 83%: el asiento se centra en su punto,
+  // y con las cartas de mano reducidas a 34px cabe sin salirse ni tapar el
+  // fieltro. Las filas se separan del centro para dejar ver la marca de agua.
+  var POS = [{id:'UTG',x:50,y:1},{id:'HJ',x:83,y:26},{id:'CO',x:83,y:74},
+             {id:'BTN',x:50,y:99},{id:'SB',x:17,y:74},{id:'BB',x:17,y:26}];
 
   var seats = POS.map(function (p, i) { return { id:p.id, x:p.x, y:p.y, i:i, on:(i===3||i===5), cards:[] }; });
   var board = [], target = { t:'seat', i:3 }, pendingRank = null, running = false;
