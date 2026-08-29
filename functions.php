@@ -7,6 +7,7 @@
  *
  *   inc/setup.php          Soportes del tema, tamaños de imagen, menús.
  *   inc/i18n.php           Multiidioma (Polylang): jt_lang(), jt_t(), selector.
+ *   inc/calculadoras.php   Calculadoras de equity: config, assets, schema, canonical.
  *   inc/enqueue.php        CSS y JS (ojo con el ORDEN de carga del CSS).
  *   inc/template-tags.php  jt_reading_time(), jt_breadcrumbs(), jt_whatsapp()…
  *   inc/schema.php         JSON-LD (Article / WebSite).
@@ -22,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'JT_THEME_DIR', get_template_directory() );
 define( 'JT_THEME_URI', get_template_directory_uri() );
 
-foreach ( array( 'setup', 'i18n', 'enqueue', 'template-tags', 'schema', 'cleanup', 'analytics' ) as $jt_module ) {
+foreach ( array( 'setup', 'i18n', 'enqueue', 'template-tags', 'schema', 'cleanup', 'analytics', 'calculadoras' ) as $jt_module ) {
 	$jt_file = JT_THEME_DIR . '/inc/' . $jt_module . '.php';
 	if ( file_exists( $jt_file ) ) {
 		require_once $jt_file;
