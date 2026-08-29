@@ -3,6 +3,10 @@
    Depende de las variables de base.css del tema.
    ═══════════════════════════════════════════════════════════ */
 
+/* Contenedor de la pagina. La clase jt-wrap del tema no trae ancho maximo
+   ni margenes, asi que sin esto la calculadora sale pegada a los bordes. */
+.jt-calc-wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+
 .jt-calc{
   --card-w:46px; --card-h:64px;
   --felt-1:#12503A; --felt-2:#0B3427; --felt-3:#082217;
@@ -29,7 +33,7 @@
 .jt-calc-head p{color:#9AA0AA;font-size:17px;line-height:1.65;margin-top:16px;max-width:62ch}
 
 /* mesa */
-.jt-felt-outer{background:#101013;border:1px solid rgba(212,175,84,.16);border-radius:18px;padding:26px 22px}
+.jt-felt-outer{background:#101013;border:1px solid rgba(212,175,84,.16);border-radius:18px;padding:26px clamp(22px,3vw,44px)}
 .jt-felt{position:relative;height:470px;border-radius:230px/158px;
   background:radial-gradient(120% 95% at 50% 38%,var(--felt-1),var(--felt-2) 58%,var(--felt-3) 100%),var(--felt-2);
   border:1px solid rgba(212,175,84,.3);
@@ -187,6 +191,7 @@
 
 /* Movil */
 @media(max-width:760px){
+  .jt-calc-wrap{padding:0 14px}
   .jt-calc{--card-w:37px;--card-h:52px}
   .jt-card .r{font-size:21px} .jt-card .p{font-size:14px}
   .jt-feltmark span{font-size:24px}
@@ -196,6 +201,7 @@
 
 /* Movil estrecho: el mazo de 13 columnas es lo primero que aprieta */
 @media(max-width:430px){
+  .jt-calc-wrap{padding:0 10px}
   .jt-calc{--card-w:32px;--card-h:45px}
   .jt-card .r{font-size:18px} .jt-card .p{font-size:12px}
   .jt-felt-outer{padding:10px 8px}
