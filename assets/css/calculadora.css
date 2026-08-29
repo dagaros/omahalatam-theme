@@ -96,7 +96,7 @@
 /* mazo */
 .jt-picker{margin-top:20px;background:#101013;border:1px solid rgba(212,175,84,.16);border-radius:14px;padding:16px}
 .jt-picker-head{display:flex;align-items:center;gap:11px;margin-bottom:13px;flex-wrap:wrap}
-.jt-picker-head .lab{font-family:var(--jt-mono,monospace);font-size:9.5px;letter-spacing:.24em;color:#6B707A;text-transform:uppercase}
+.jt-picker-head .lab{font-family:var(--jt-mono,monospace);font-size:11px;letter-spacing:.2em;color:#B9C0CB;text-transform:uppercase}
 .jt-target{font-family:var(--jt-mono,monospace);font-size:12px;color:var(--gold-p);border:1px solid rgba(212,175,84,.38);
   background:rgba(212,175,84,.09);border-radius:6px;padding:5px 10px;font-weight:500}
 .jt-target .pend{color:#00E676}
@@ -113,8 +113,8 @@
 .jt-dcard.is-hl{border-color:#00E676;box-shadow:0 0 0 2px rgba(0,230,118,.25)}
 
 /* botones */
-.jt-cbtn{font-family:var(--jt-mono,monospace);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;padding:9px 14px;
-  border-radius:8px;border:1px solid rgba(212,175,84,.16);background:#15151A;color:#9AA0AA;cursor:pointer;transition:.16s;white-space:nowrap}
+.jt-cbtn{font-family:var(--jt-mono,monospace);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;padding:10px 15px;
+  border-radius:8px;border:1px solid rgba(212,175,84,.26);background:#181820;color:#CFD6E0;cursor:pointer;transition:.16s;white-space:nowrap}
 .jt-cbtn:hover{color:#E2E8F0;border-color:rgba(212,175,84,.45);background:#1B1B21}
 .jt-cbtn.is-gold{background:linear-gradient(180deg,#E7C877,#D4AF54);color:#2A2005;border-color:#D4AF54;font-weight:600}
 .jt-cbtn.is-gold:hover{filter:brightness(1.09)}
@@ -123,8 +123,8 @@
 
 /* resultados */
 .jt-panel{background:#101013;border:1px solid rgba(212,175,84,.16);border-radius:14px;padding:18px;position:sticky;top:18px}
-.jt-panel h2{font-family:var(--jt-mono,monospace);font-size:9.5px;letter-spacing:.26em;color:#6B707A;text-transform:uppercase;margin:0 0 14px}
-.jt-res-empty{color:#9AA0AA;font-size:13.5px;line-height:1.65;padding:14px 0 20px;border-bottom:1px solid rgba(226,232,240,.09);margin-bottom:14px}
+.jt-panel h2{font-family:var(--jt-mono,monospace);font-size:11px;letter-spacing:.24em;color:#B9C0CB;text-transform:uppercase;margin:0 0 14px}
+.jt-res-empty{color:#C2C9D4;font-size:14px;line-height:1.7;padding:14px 0 20px;border-bottom:1px solid rgba(226,232,240,.12);margin-bottom:14px}
 .jt-res-row{margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(226,232,240,.09)}
 .jt-res-row:last-of-type{border-bottom:0;margin-bottom:6px}
 .jt-res-top{display:flex;align-items:center;gap:9px;margin-bottom:9px}
@@ -140,26 +140,60 @@
 .jt-bar .w{background:linear-gradient(90deg,var(--gold),var(--gold-p))}
 .jt-bar .t{background:rgba(226,232,240,.42)}
 .jt-res-sub{font-family:var(--jt-mono,monospace);font-size:13px;color:#E2E8F0;margin-top:9px;display:flex;gap:18px;font-variant-numeric:tabular-nums}
-.jt-res-sub .k{color:#6B707A;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-right:5px}
+.jt-res-sub .k{color:#98A0AC;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:5px}
 .jt-res-sub b{font-weight:600;color:var(--gold-p)}
 .jt-res-sub .tie b{color:#E2E8F0}
-.jt-meta{border-top:1px solid rgba(226,232,240,.09);margin-top:16px;padding-top:14px;font-family:var(--jt-mono,monospace);font-size:10.5px;color:#9AA0AA;line-height:1.85}
-.jt-meta b{color:#6B707A;font-weight:400}
+.jt-meta{border-top:1px solid rgba(226,232,240,.14);margin-top:16px;padding-top:14px;font-family:var(--jt-mono,monospace);font-size:12px;color:#C7CEDA;line-height:1.9}
+.jt-meta b{color:#8E96A3;font-weight:400}
 .jt-blockers{background:rgba(212,175,84,.06);border:1px solid rgba(212,175,84,.2);border-radius:10px;padding:13px;margin-top:14px}
 .jt-blockers .t{font-family:var(--jt-mono,monospace);font-size:9px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:7px}
-.jt-blockers p{font-size:13.5px;line-height:1.55;color:#9AA0AA;margin:0}
+.jt-blockers p{font-size:14px;line-height:1.6;color:#D2D8E2;margin:0}
 .jt-blockers b{color:var(--gold-p);font-family:var(--jt-mono,monospace);font-weight:600;font-size:15px}
 .jt-prog{height:2px;background:rgba(212,175,84,.12);border-radius:2px;overflow:hidden;margin-top:12px;opacity:0;transition:.3s}
 .jt-prog.is-on{opacity:1}
 .jt-prog i{display:block;height:100%;background:var(--gold);width:0}
 .jt-tools{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
 
-.jt-kbd{font-family:var(--jt-mono,monospace);font-size:10px;color:#6B707A;letter-spacing:.06em;border:1px solid rgba(226,232,240,.09);border-radius:7px;padding:7px 11px;margin-top:14px}
-.jt-kbd b{color:var(--gold-p);font-weight:500}
+.jt-kbd{font-family:var(--jt-mono,monospace);font-size:12px;color:#C7CEDA;letter-spacing:.04em;line-height:1.75;border:1px solid rgba(212,175,84,.28);background:rgba(212,175,84,.07);border-radius:9px;padding:11px 13px;margin-top:14px}
+.jt-kbd b{color:var(--gold-p);font-weight:600}
 .jt-toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#1B1B21;border:1px solid rgba(212,175,84,.16);
   border-radius:9px;padding:11px 17px;font-family:var(--jt-mono,monospace);font-size:11.5px;color:#E2E8F0;opacity:0;pointer-events:none;transition:.25s;z-index:99}
 .jt-toast.is-on{opacity:1;transform:translate(-50%,0)}
-.jt-calc-article{margin-top:44px}
+/* ── Contenido SEO bajo la calculadora ─────────────────────────── */
+.jt-calc-article{margin:56px auto 0;max-width:820px;color:#C7CEDA;font-size:16.5px;line-height:1.75}
+.jt-calc-article h2{font-family:var(--jt-disp,'Bricolage Grotesque',serif);font-weight:800;font-size:clamp(24px,3vw,34px);
+  letter-spacing:-1px;line-height:1.15;margin:46px 0 16px;color:#F2F5F9}
+.jt-calc-article h2:first-child{margin-top:0}
+.jt-calc-article h3{font-family:var(--jt-disp,'Bricolage Grotesque',serif);font-weight:800;font-size:20px;letter-spacing:-.4px;
+  margin:30px 0 10px;color:var(--gold-p)}
+.jt-calc-article p{margin:0 0 16px}
+.jt-calc-article strong{color:#F2F5F9;font-weight:600}
+.jt-calc-article a{color:var(--gold-l);text-decoration:underline;text-underline-offset:3px}
+.jt-calc-article ul,.jt-calc-article ol{margin:0 0 18px;padding-left:22px}
+.jt-calc-article li{margin-bottom:9px}
+.jt-calc-article li::marker{color:var(--gold)}
+.jt-calc-article table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:15px}
+.jt-calc-article th,.jt-calc-article td{text-align:left;padding:11px 13px;border-bottom:1px solid rgba(226,232,240,.12)}
+.jt-calc-article th{font-family:var(--jt-mono,monospace);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.jt-calc-article td{color:#D2D8E2}
+.jt-calc-article kbd{font-family:var(--jt-mono,monospace);font-size:13px;background:rgba(212,175,84,.12);border:1px solid rgba(212,175,84,.35);
+  border-radius:5px;padding:2px 7px;color:var(--gold-p)}
+/* FAQ desplegable */
+.jt-faq{border:1px solid rgba(212,175,84,.18);border-radius:12px;background:#101013;margin-bottom:10px;overflow:hidden}
+.jt-faq summary{cursor:pointer;padding:16px 18px;font-weight:600;font-size:16.5px;color:#F2F5F9;list-style:none;display:flex;align-items:center;gap:12px}
+.jt-faq summary::-webkit-details-marker{display:none}
+.jt-faq summary::before{content:'+';font-family:var(--jt-mono,monospace);color:var(--gold);font-size:19px;line-height:1;flex:0 0 auto}
+.jt-faq[open] summary::before{content:'\2212'}
+.jt-faq summary:hover{background:rgba(212,175,84,.05)}
+.jt-faq p{padding:0 18px 17px 47px;margin:0;color:#C7CEDA;font-size:15.5px}
+/* aviso de precision */
+.jt-nota{border-left:3px solid var(--gold);background:rgba(212,175,84,.06);padding:15px 18px;border-radius:0 10px 10px 0;margin:0 0 22px}
+.jt-nota p{margin:0;font-size:15.5px;color:#D2D8E2}
+@media(max-width:760px){
+  .jt-calc-article{font-size:16px;margin-top:40px}
+  .jt-calc-article table{font-size:14px}
+  .jt-calc-article th,.jt-calc-article td{padding:9px 8px}
+}
 
 /* ─────────────────────────────────────────────────────────────
    Tramos responsivos
