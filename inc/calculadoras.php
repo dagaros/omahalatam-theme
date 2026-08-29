@@ -251,3 +251,42 @@ function jt_calc_canonical( $url ) {
 }
 add_filter( 'rank_math/frontend/canonical', 'jt_calc_canonical' );
 add_filter( 'get_canonical_url', 'jt_calc_canonical' );
+
+/**
+ * Permite que las paginas de calculadora compartan slug entre idiomas.
+ *
+ * WordPress no deja dos paginas hermanas con el mismo slug, asi que la version
+ * brasilena acababa en /pt/calculadoras-2/. Compartir slugs entre idiomas es
+ * funcion de Polylang Pro, asi que lo hacemos aqui a mano y solo para el
+ * puñado de slugs de las calculadoras: no afecta a ninguna otra pagina.
+ */
+function jt_calc_share_slug( $slug, $post_ID, $post_status, $post_type, $post_parent, $original_slug ) {
+
+	if ( 'page' !== $post_type ) return $slug;
+	if ( $slug === $original_slug ) return $slug;
+
+	$permitidos = array( 'calculadoras' );
+	foreach ( jt_calc_config() as $c ) $permitidos[] = $c['slug'];
+
+	if ( ! in_array( $original_slug, $permitidos, true ) ) return $slug;
+
+	// Solo se devuelve el slug limpio si el choque es con una pagina de otro idioma.
+	if ( function_exists( 'pll_get_post_language' ) ) {
+		$mio = pll_get_post_language( $post_ID );
+		$otros = get_posts( array(
+			'post_type'   => 'page',
+			'post_status' => array( 'publish', 'draft', 'pending', 'future' ),
+			'name'        => $original_slug,
+			'post_parent' => $post_parent,
+			'exclude'     => array( $post_ID ),
+			'numberposts' => 5,
+			'lang'        => '',
+		) );
+		foreach ( $otros as $o ) {
+			if ( pll_get_post_language( $o->ID ) === $mio ) return $slug; // choque real dentro del idioma
+		}
+	}
+
+	return $original_slug;
+}
+add_filter( 'wp_unique_post_slug', 'jt_calc_share_slug', 10, 6 );
