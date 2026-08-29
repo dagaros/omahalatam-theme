@@ -20,13 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <?php wp_body_open(); ?>
 
 <!-- Age Gate -->
-<div id="jt-age-gate" class="jt-age" role="dialog" aria-modal="true" aria-label="Verificación de edad" style="display:none;">
+<div id="jt-age-gate" class="jt-age" role="dialog" aria-modal="true" aria-label="<?php echo esc_attr( jt_t('h_edad_lbl') ); ?>" style="display:none;">
   <div class="jt-age__card">
     <div class="jt-age__badge">18+</div>
-    <h2>¿Eres mayor de 18 años?</h2>
+    <h2><?php echo esc_html( jt_t('h_edad_q') ); ?></h2>
     <p>Este sitio contiene contenido sobre poker destinado únicamente a personas adultas. Juega con responsabilidad.</p>
-    <button type="button" id="jt-age-yes" class="jt-age__btn-yes">Sí, soy mayor de 18</button>
-    <a href="https://www.google.com" class="jt-age__btn-no">Salir del sitio</a>
+    <button type="button" id="jt-age-yes" class="jt-age__btn-yes"><?php echo esc_html( jt_t('h_edad_si') ); ?></button>
+    <a href="https://www.google.com" class="jt-age__btn-no"><?php echo esc_html( jt_t('h_edad_no') ); ?></a>
   </div>
 </div>
 
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <header class="jt-nav" id="jt-nav">
   <nav class="jt-nav__inner">
     <!-- Logo: J♠ card -->
-    <a href="<?php echo esc_url( jt_home_url('/') ); ?>" class="jt-logo" aria-label="Jhontra — Inicio">
+    <a href="<?php echo esc_url( jt_home_url('/') ); ?>" class="jt-logo" aria-label="<?php echo esc_attr( jt_t('h_inicio') ); ?>">
       <div class="jt-logo__card">
         <div class="jt-logo__shadow"></div>
         <div class="jt-logo__face">
@@ -65,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__cta" id="jt-desktop-cta" target="_blank" rel="noopener">
         <span>✆</span> WhatsApp
       </a>
-      <button type="button" id="jt-mobile-btn" class="jt-nav__hamburger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button type="button" id="jt-mobile-btn" class="jt-nav__hamburger" aria-label="<?php echo esc_attr( jt_t('h_menu') ); ?>" aria-expanded="false">☰</button>
     </div>
   </nav>
 
@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <?php foreach ( jt_nav_items() as $jt_item ) : ?>
       <a href="<?php echo esc_url( $jt_item['url'] ); ?>"<?php echo $jt_item['active'] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_item['label'] ); ?></a>
     <?php endforeach; ?>
-    <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__mobile-cta" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__mobile-cta" target="_blank" rel="noopener"><?php echo esc_html( jt_t('h_wa_mob') ); ?></a>
   </div>
 </header>
 

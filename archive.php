@@ -20,16 +20,16 @@ get_header();
   <div class="jt-archive-hero__inner">
     <?php jt_breadcrumbs(); ?>
     <div data-reveal style="max-width:760px;">
-      <div class="jt-pill">Análisis · Noticias · Estrategia</div>
+      <div class="jt-pill"><?php echo esc_html( jt_t('a_kicker') ); ?></div>
       <?php if ( is_category() ) : ?>
-        <h1>El Blog de <span class="jt-gold"><?php single_cat_title(); ?></span></h1>
+        <h1><?php echo esc_html( jt_t('a_blogde2') ); ?> <span class="jt-gold"><?php single_cat_title(); ?></span></h1>
         <?php if ( category_description() ) : ?>
           <p><?php echo esc_html( strip_tags( category_description() ) ); ?></p>
         <?php endif; ?>
       <?php elseif ( is_search() ) : ?>
-        <h1>Resultados: <span class="jt-gold"><?php echo esc_html( get_search_query() ); ?></span></h1>
+        <h1><?php echo esc_html( jt_t('a_result2') ); ?> <span class="jt-gold"><?php echo esc_html( get_search_query() ); ?></span></h1>
       <?php else : ?>
-        <h1>El Blog de <span class="jt-gold">Omaha 5</span></h1>
+        <h1><?php echo esc_html( jt_t('a_blogde2') ); ?> <span class="jt-gold">Omaha 5</span></h1>
         <p>Estrategia aplicada, análisis de manos, noticias de las salas y guías de rakeback. Todo lo que necesitas para dejar de depender de la suerte y ganar con matemática.</p>
       <?php endif; ?>
     </div>
@@ -86,11 +86,11 @@ if ( ! empty( $categories ) ) : ?>
                 <span class="jt-dot"></span>
                 <span><?php echo jt_reading_time(); ?> de lectura</span>
                 <span class="jt-dot"></span>
-                <span>Por Jhontra</span>
+                <span><?php echo esc_html( jt_t('a_por2') ); ?></span>
               </div>
               <h2><?php the_title(); ?></h2>
               <p><?php echo get_the_excerpt(); ?></p>
-              <span class="jt-feat__cta">Leer artículo completo <span>→</span></span>
+              <span class="jt-feat__cta"><?php echo esc_html( jt_t('a_leer') ); ?> <span>→</span></span>
             </div>
           </a>
         </article>
@@ -107,7 +107,7 @@ if ( ! empty( $categories ) ) : ?>
         <?php
         $plinks = paginate_links( array( 'type' => 'array', 'prev_text' => '← Anterior', 'next_text' => 'Siguiente →' ) );
         if ( $plinks ) : ?>
-        <nav class="jt-pagination" aria-label="Paginación">
+        <nav class="jt-pagination" aria-label="<?php echo esc_attr( jt_t('a_pag') ); ?>">
           <?php foreach ( $plinks as $link ) echo $link; ?>
         </nav>
         <?php endif; ?>
@@ -115,8 +115,8 @@ if ( ! empty( $categories ) ) : ?>
       <?php else : ?>
         <div style="text-align:center;padding:80px 0;color:#7A808A;">
           <p style="font-size:48px;margin-bottom:16px;">♠</p>
-          <h2 style="font-family:'Bricolage Grotesque',sans-serif;color:#fff;margin-bottom:12px;">Próximamente</h2>
-          <p>Estamos preparando contenido de alto nivel sobre PLO5.</p>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;color:#fff;margin-bottom:12px;"><?php echo esc_html( jt_t('a_prox') ); ?></h2>
+          <p><?php echo esc_html( jt_t('a_prox_p') ); ?></p>
         </div>
       <?php endif; ?>
     </main>

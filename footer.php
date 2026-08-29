@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
       <div>
         <div class="jt-footer__heading"><?php echo esc_html( jt_t('f_redes') ); ?></div>
         <div class="jt-footer__links">
-          <a href="#" target="_blank" rel="noopener">YouTube</a>
+          <a href="<?php echo esc_url( jt_youtube_url() ); ?>" target="_blank" rel="noopener">YouTube</a>
           <a href="#" target="_blank" rel="noopener">Instagram</a>
           <a href="#" target="_blank" rel="noopener">X (Twitter)</a>
           <a href="#" target="_blank" rel="noopener">TikTok</a>
@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 </footer>
 
 <!-- WhatsApp FAB -->
-<a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-fab" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+<a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-fab" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( jt_t('f_wa_lbl') ); ?>">
   <span class="jt-fab__icon">✆</span> <span class="jt-fab__label" id="jt-fab-label">WhatsApp</span>
 </a>
 
