@@ -12,7 +12,9 @@
   if (!root) return;
 
   var T = CFG.i18n;
-  var V = CFG.variant;
+  // wp_localize_script serializa todo como texto, asi que 5 llega como '5'.
+  // Sin este parseInt, la comparacion cards.length === V nunca es cierta.
+  var V = parseInt(CFG.variant, 10);
   var RANKS = ['A','K','Q','J','T','9','8','7','6','5','4','3','2'];
   var RV    = [12,11,10,9,8,7,6,5,4,3,2,1,0];
   var SUITS = [{g:'\u2660',c:'jt-sS',k:'s'},{g:'\u2665',c:'jt-sH',k:'h'},
