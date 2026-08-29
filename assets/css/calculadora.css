@@ -132,30 +132,33 @@
 .jt-res-pct{margin-left:auto;font-family:var(--jt-mono,monospace);font-size:25px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
 .jt-res-pct.is-lead{color:var(--gold-l)}
 .jt-res-cards{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}
-.jt-mini{width:34px;height:47px;border-radius:5px;background:linear-gradient(165deg,#1F1F29,#0F0F14);border:1px solid rgba(226,232,240,.2);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--jt-disp,serif);font-weight:800;line-height:1;box-shadow:0 3px 8px rgba(0,0,0,.5)}
-.jt-mini .r{font-size:19px;letter-spacing:-.5px} .jt-mini .p{font-size:12px;margin-top:1px}
+/* Misma familia que el mazo y la mesa. Antes decia var(--jt-disp,serif) sin
+   nombrar la fuente, asi que caia a la serif del sistema y desentonaba. */
+.jt-mini{width:38px;height:53px;border-radius:5px;background:linear-gradient(165deg,#1F1F29,#0F0F14);border:1px solid rgba(226,232,240,.2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--jt-disp,'Bricolage Grotesque',sans-serif);font-weight:800;line-height:1;box-shadow:0 3px 8px rgba(0,0,0,.5)}
+.jt-mini .r{font-size:22px;letter-spacing:-.6px} .jt-mini .p{font-size:14px;margin-top:1px}
 .jt-bar{height:11px;border-radius:6px;background:rgba(226,232,240,.08);overflow:hidden;display:flex}
 .jt-bar i{display:block;height:100%;transition:width .2s}
 .jt-bar .w{background:linear-gradient(90deg,var(--gold),var(--gold-p))}
 .jt-bar .t{background:rgba(226,232,240,.42)}
-.jt-res-sub{font-family:var(--jt-mono,monospace);font-size:13px;color:#E2E8F0;margin-top:9px;display:flex;gap:18px;font-variant-numeric:tabular-nums}
-.jt-res-sub .k{color:#98A0AC;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-right:5px}
+.jt-res-sub{font-family:var(--jt-mono,monospace);font-size:14.5px;color:#E2E8F0;margin-top:11px;display:flex;gap:20px;font-variant-numeric:tabular-nums}
+.jt-res-sub .k{color:#A7AEBB;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;margin-right:6px}
 .jt-res-sub b{font-weight:600;color:var(--gold-p)}
 .jt-res-sub .tie b{color:#E2E8F0}
-.jt-meta{border-top:1px solid rgba(226,232,240,.14);margin-top:16px;padding-top:14px;font-family:var(--jt-mono,monospace);font-size:12px;color:#C7CEDA;line-height:1.9}
-.jt-meta b{color:#8E96A3;font-weight:400}
+.jt-meta{border-top:1px solid rgba(226,232,240,.14);margin-top:16px;padding-top:15px;font-family:var(--jt-mono,monospace);font-size:13.5px;color:#DDE3EC;line-height:2}
+.jt-meta b{color:#A7AEBB;font-weight:500}
 .jt-blockers{background:rgba(212,175,84,.06);border:1px solid rgba(212,175,84,.2);border-radius:10px;padding:13px;margin-top:14px}
-.jt-blockers .t{font-family:var(--jt-mono,monospace);font-size:9px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:7px}
-.jt-blockers p{font-size:14px;line-height:1.6;color:#D2D8E2;margin:0}
-.jt-blockers b{color:var(--gold-p);font-family:var(--jt-mono,monospace);font-weight:600;font-size:15px}
+.jt-blockers .t{font-family:var(--jt-mono,monospace);font-size:11.5px;letter-spacing:.18em;color:var(--gold-l);text-transform:uppercase;margin-bottom:9px;font-weight:500}
+.jt-blockers p{font-size:15.5px;line-height:1.65;color:#E4E9F0;margin:0}
+.jt-blockers b{color:var(--gold-p);font-family:var(--jt-mono,monospace);font-weight:700;font-size:17px}
 .jt-prog{height:2px;background:rgba(212,175,84,.12);border-radius:2px;overflow:hidden;margin-top:12px;opacity:0;transition:.3s}
 .jt-prog.is-on{opacity:1}
 .jt-prog i{display:block;height:100%;background:var(--gold);width:0}
 .jt-tools{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
 
-.jt-kbd{font-family:var(--jt-mono,monospace);font-size:12px;color:#C7CEDA;letter-spacing:.04em;line-height:1.75;border:1px solid rgba(212,175,84,.28);background:rgba(212,175,84,.07);border-radius:9px;padding:11px 13px;margin-top:14px}
-.jt-kbd b{color:var(--gold-p);font-weight:600}
+.jt-kbd{font-family:var(--jt-mono,monospace);font-size:13.5px;color:#DDE3EC;letter-spacing:.03em;line-height:1.9;border:1px solid rgba(212,175,84,.32);background:rgba(212,175,84,.08);border-radius:9px;padding:13px 15px;margin-top:14px}
+.jt-kbd b{color:var(--gold-p);font-weight:700}
 .jt-toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#1B1B21;border:1px solid rgba(212,175,84,.16);
   border-radius:9px;padding:11px 17px;font-family:var(--jt-mono,monospace);font-size:11.5px;color:#E2E8F0;opacity:0;pointer-events:none;transition:.25s;z-index:99}
 .jt-toast.is-on{opacity:1;transform:translate(-50%,0)}
