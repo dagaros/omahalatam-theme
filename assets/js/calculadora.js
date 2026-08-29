@@ -23,8 +23,11 @@
   var glyph = function (i) { return { r: RANKS[12 - i % 13], p: SUITS[(i/13)|0].g, c: SUITS[(i/13)|0].c }; };
   var label = function (i) { return RANKS[12 - i % 13] + SUITS[(i/13)|0].k; };
 
-  var POS = [{id:'UTG',x:32,y:5},{id:'HJ',x:96,y:32},{id:'CO',x:88,y:82},
-             {id:'BTN',x:50,y:100},{id:'SB',x:12,y:82},{id:'BB',x:4,y:32}];
+  // Posiciones alrededor del ovalo. Los laterales van metidos hacia dentro
+  // porque el asiento se centra en su punto y en PLO6 mide casi 320px: con
+  // los valores extremos se salia del contenedor en pantallas normales.
+  var POS = [{id:'UTG',x:34,y:4},{id:'HJ',x:83,y:30},{id:'CO',x:78,y:84},
+             {id:'BTN',x:50,y:100},{id:'SB',x:22,y:84},{id:'BB',x:17,y:30}];
 
   var seats = POS.map(function (p, i) { return { id:p.id, x:p.x, y:p.y, i:i, on:(i===3||i===5), cards:[] }; });
   var board = [], target = { t:'seat', i:3 }, pendingRank = null, running = false;
