@@ -53,7 +53,7 @@ $base = jt_calc_base();
             <div class="jt-feltmark"><span>Omaha<i>Latam</i><em>.com</em></span></div>
             <div class="jt-zone-label">Mesa</div>
             <div class="jt-board-slots"></div>
-            <div class="jt-board-tag"><span>FLOP</span><span>TURN</span><span>RIVER</span></div>
+            <div class="jt-board-tag"><span class="is-flop">FLOP</span><i></i><span class="is-turn">TURN</span><i></i><span class="is-river">RIVER</span></div>
           </div>
         </div>
       </div>
