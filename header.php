@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
     <!-- Desktop nav -->
     <div class="jt-nav__links" id="jt-desktop-nav">
       <?php foreach ( jt_nav_items() as $jt_item ) : ?>
-        <a href="<?php echo esc_url( $jt_item['url'] ); ?>"<?php echo $jt_item['active'] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_item['label'] ); ?></a>
+        <a href="<?php echo esc_url( $jt_item['url'] ); ?>" class="<?php echo $jt_item['active'] ? 'jt-nav__active ' : ''; ?><?php echo empty( $jt_item['cta'] ) ? '' : 'jt-nav__pill'; ?>"><?php echo esc_html( $jt_item['label'] ); ?></a>
       <?php endforeach; ?>
     </div>
 
@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
   <!-- Mobile menu -->
   <div class="jt-nav__mobile" id="jt-mobile-menu" style="display:none;">
     <?php foreach ( jt_nav_items() as $jt_item ) : ?>
-      <a href="<?php echo esc_url( $jt_item['url'] ); ?>"<?php echo $jt_item['active'] ? ' class="jt-nav__active"' : ''; ?>><?php echo esc_html( $jt_item['label'] ); ?></a>
+      <a href="<?php echo esc_url( $jt_item['url'] ); ?>" class="<?php echo $jt_item['active'] ? 'jt-nav__active ' : ''; ?><?php echo empty( $jt_item['cta'] ) ? '' : 'jt-nav__pill'; ?>"><?php echo esc_html( $jt_item['label'] ); ?></a>
     <?php endforeach; ?>
     <a href="<?php echo esc_url( jt_whatsapp_url() ); ?>" class="jt-nav__mobile-cta" target="_blank" rel="noopener"><?php echo esc_html( jt_t('h_wa_mob') ); ?></a>
   </div>
