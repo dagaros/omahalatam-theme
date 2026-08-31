@@ -51,7 +51,16 @@
 .jt-zone-label{font-family:var(--jt-mono,monospace);font-size:9px;letter-spacing:.28em;color:rgba(245,228,168,.55);text-transform:uppercase;margin-bottom:9px}
 .jt-board-slots{display:flex;gap:7px;align-items:center;justify-content:center}
 .jt-street-gap{width:1px;height:38px;background:rgba(245,228,168,.28);margin:0 4px}
-.jt-board-tag{font-family:var(--jt-mono,monospace);font-size:8.5px;letter-spacing:.2em;color:rgba(245,228,168,.45);margin-top:8px;display:flex;justify-content:center;gap:34px}
+/* Los nombres de calle se alinean con sus cartas replicando la estructura de
+   .jt-board-slots: mismo gap de 7px, FLOP ocupando las tres primeras cartas y
+   dos separadores del ancho del corte de calle (1px de linea + 8px de margen).
+   Antes iban centrados como grupo con un hueco fijo, y quedaban corridos. */
+.jt-board-tag{font-family:var(--jt-mono,monospace);font-size:10px;letter-spacing:.16em;color:rgba(245,228,168,.72);
+  margin-top:9px;display:flex;justify-content:center;align-items:center;gap:7px}
+.jt-board-tag span{flex:0 0 auto;text-align:center}
+.jt-board-tag i{flex:0 0 auto;width:9px}
+.jt-board-tag .is-flop{width:calc(var(--card-w) * 3 + 14px)}
+.jt-board-tag .is-turn,.jt-board-tag .is-river{width:var(--card-w)}
 
 /* asientos */
 .jt-seat{position:absolute;transform:translate(-50%,-50%);z-index:4;width:max-content}
@@ -237,6 +246,10 @@
 /* Movil */
 @media(max-width:760px){
   .jt-calc-wrap{padding:0 14px}
+  /* la mesa se envuelve en movil, asi que la alineacion exacta no aplica */
+  .jt-board-tag{gap:26px;font-size:9.5px}
+  .jt-board-tag i{display:none}
+  .jt-board-tag .is-flop,.jt-board-tag .is-turn,.jt-board-tag .is-river{width:auto}
   .jt-calc{--card-w:37px;--card-h:52px}
   /* en lista vertical la mano recupera el tamano normal */
   .jt-hand{--card-w:37px;--card-h:52px}
