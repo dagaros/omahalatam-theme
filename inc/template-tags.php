@@ -201,13 +201,17 @@ function jt_nav_items() {
 
 	$blog = function_exists( 'jt_home_url' ) ? jt_home_url( '/blog/' ) : home_url( '/blog/' );
 
+	// La calculadora es la herramienta que mejor convierte, asi que va en el menu
+	// y marcada como CTA. Apunta a PLO5, que es la variante insignia del sitio.
+	$calc    = function_exists( 'jt_calc_url' ) ? jt_calc_url() : $blog;
+	$en_calc = function_exists( 'jt_calc_current' ) && jt_calc_current() !== '';
+
 	return apply_filters( 'jt_nav_items', array(
-		array( 'label' => jt_t( 'nav_metodo' ),    'url' => jt_anchor_url( 'metodo' ),    'active' => false ),
-		array( 'label' => jt_t( 'nav_jhontra' ),   'url' => jt_anchor_url( 'jhontra' ),   'active' => false ),
-		array( 'label' => jt_t( 'nav_clubes' ),    'url' => jt_anchor_url( 'clubes' ),    'active' => false ),
-		array( 'label' => jt_t( 'nav_contenido' ), 'url' => jt_anchor_url( 'contenido' ), 'active' => false ),
-		array( 'label' => jt_t( 'nav_blog' ),      'url' => $blog,                        'active' => $en_blog ),
-		array( 'label' => jt_t( 'nav_empezar' ),   'url' => jt_anchor_url( 'empezar' ),   'active' => false ),
+		array( 'label' => jt_t( 'nav_jhontra' ),  'url' => jt_anchor_url( 'jhontra' ), 'active' => false ),
+		array( 'label' => jt_t( 'nav_clubes' ),   'url' => jt_anchor_url( 'clubes' ),  'active' => false ),
+		array( 'label' => jt_t( 'nav_calc' ),     'url' => $calc,                      'active' => $en_calc, 'cta' => true ),
+		array( 'label' => jt_t( 'nav_blog' ),     'url' => $blog,                      'active' => $en_blog ),
+		array( 'label' => jt_t( 'nav_contacto' ), 'url' => jt_anchor_url( 'empezar' ), 'active' => false ),
 	) );
 }
 
