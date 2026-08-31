@@ -44,3 +44,7 @@ img{max-width:100%;height:auto;display:block}
 .jt-lang__item:hover{color:#F5E4A8;background:rgba(212,175,84,.12)}
 .jt-lang__item.is-active{color:#2A2005;background:linear-gradient(180deg,#E7C877,#D4AF54);font-weight:600}
 @media (max-width:640px){.jt-lang--nav{display:none}}
+
+/* ── Item destacado del menu ── */
+.jt-nav__pill{border:1px solid rgba(212,175,84,.45);background:rgba(212,175,84,.1);border-radius:9px;padding:7px 14px;color:#F5E4A8!important;transition:.16s}
+.jt-nav__pill:hover{background:rgba(212,175,84,.22);border-color:#D4AF54}
