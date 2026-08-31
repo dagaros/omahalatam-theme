@@ -207,24 +207,19 @@ function jt_calc_schema() {
 	$pt  = jt_is_pt();
 	$url = jt_calc_base() . $C['slug'] . '/';
 
-	$faq = $pt ? array(
-		array( 'A calculadora é grátis?', 'Sim, totalmente. Não há cadastro, não há cartão e não há limite de cálculos. Funciona no celular igual que no computador.' ),
-		array( 'Qual é a precisão dos resultados?', 'Com mesa no flop, turn ou river o resultado é exato: todas as combinações possíveis são enumeradas. No preflop usa-se Monte Carlo, e o painel sempre indica o método e a margem.' ),
-		array( 'Quantos jogadores posso colocar?', 'Até seis, cada um na sua posição real da mesa. Dá para ativar e retirar posições no botão de cada assento.' ),
-		array( 'Posso digitar as cartas pelo teclado?', 'Sim. Digite o valor e o naipe seguidos, por exemplo As ou Td. As setas mudam de posição, o retrocesso apaga e Enter calcula.' ),
-	) : array(
-		array( '¿La calculadora es gratis?', 'Sí, completamente. No hay registro, no hay tarjeta y no hay límite de cálculos. Funciona en el celular igual que en el computador.' ),
-		array( '¿Qué tan precisos son los resultados?', 'Con mesa en el flop, turn o river el resultado es exacto: se enumeran todas las combinaciones posibles. En preflop se usa Monte Carlo, y el panel indica siempre el método y el margen.' ),
-		array( '¿Cuántos jugadores puedo poner?', 'Hasta seis, cada uno en su posición real de la mesa. Puedes activar y retirar posiciones con el botón de cada asiento.' ),
-		array( '¿Puedo escribir las cartas con el teclado?', 'Sí. Escribe el rango y el palo seguidos, por ejemplo As o Td. Las flechas mueven entre posiciones, el retroceso borra y Enter calcula.' ),
-	);
-
+	// Las preguntas del schema se leen del contenido real de la pagina, no de una
+	// lista aparte: si el schema declara preguntas que no estan visibles, Google
+	// lo considera contenido enganoso y puede retirar el rich snippet.
 	$preguntas = array();
-	foreach ( $faq as $f ) {
-		$preguntas[] = array(
-			'@type' => 'Question', 'name' => $f[0],
-			'acceptedAnswer' => array( '@type' => 'Answer', 'text' => $f[1] ),
-		);
+
+	if ( preg_match_all( '/<details[^>]*class="[^"]*jt-faq[^"]*"[^>]*>\s*<summary>(.*?)<\/summary>\s*<p>(.*?)<\/p>/s', get_post_field( 'post_content', get_queried_object_id() ), $m, PREG_SET_ORDER ) ) {
+		foreach ( $m as $par ) {
+			$preguntas[] = array(
+				'@type'          => 'Question',
+				'name'           => wp_strip_all_tags( $par[1] ),
+				'acceptedAnswer' => array( '@type' => 'Answer', 'text' => wp_strip_all_tags( $par[2] ) ),
+			);
+		}
 	}
 
 	$graph = array(
@@ -240,12 +235,16 @@ function jt_calc_schema() {
 			'offers' => array( '@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'USD' ),
 			'publisher' => array( '@id' => 'https://omahalatam.com/#org' ),
 		),
-		array(
-			'@type' => 'FAQPage', '@id' => $url . '#faq',
+	);
+
+	if ( $preguntas ) {
+		$graph[] = array(
+			'@type'      => 'FAQPage',
+			'@id'        => $url . '#faq',
 			'inLanguage' => $pt ? 'pt-BR' : 'es',
 			'mainEntity' => $preguntas,
-		),
-	);
+		);
+	}
 
 	echo '<script type="application/ld+json">'
 		. wp_json_encode( array( '@context' => 'https://schema.org', '@graph' => $graph ),
