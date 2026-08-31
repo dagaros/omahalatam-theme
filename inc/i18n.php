@@ -289,6 +289,15 @@ function jt_hreflang_tags() {
 add_action( 'wp_head', 'jt_hreflang_tags', 4 );
 
 /**
+ * Silencia el hreflang propio de Polylang.
+ *
+ * Desde que las paginas estan vinculadas como traducciones, Polylang emite su
+ * propio juego de etiquetas y se duplicaban con las del tema. Se deja solo el
+ * del tema, que es el unico que anade x-default.
+ */
+add_filter( 'pll_rel_hreflang_fields', '__return_empty_array' );
+
+/**
  * Canal de YouTube de OmahaLatam.
  *
  * Centralizado igual que jt_whatsapp_url(): si algun dia cambia el handle,
