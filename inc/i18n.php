@@ -64,6 +64,8 @@ function jt_t( $key ) {
 		'nav_clubes'    => array( 'es' => 'Clubes',           'pt' => 'Clubes' ),
 		'nav_contenido' => array( 'es' => 'Contenido',        'pt' => 'Conteúdo' ),
 		'nav_blog'      => array( 'es' => 'Blog / Noticias',  'pt' => 'Blog / Notícias' ),
+		'nav_calc'      => array( 'es' => 'Calculadora',      'pt' => 'Calculadora' ),
+		'nav_contacto'  => array( 'es' => 'Contacto',         'pt' => 'Contato' ),
 		'nav_empezar'   => array( 'es' => 'Empezar',          'pt' => 'Começar' ),
 
 		'crumb_inicio'  => array( 'es' => 'Inicio',               'pt' => 'Início' ),

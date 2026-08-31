@@ -128,6 +128,17 @@ function jt_calc_base() {
 	return trailingslashit( jt_home_url( '/' ) ) . $hub;
 }
 
+/**
+ * URL de la calculadora destacada del idioma actual.
+ *
+ * Se usa en el menu y en la portada. Apunta a PLO5 porque es la variante
+ * insignia y la unica calculadora de PLO5 que existe en espanol y portugues.
+ */
+function jt_calc_url() {
+	$cfg = jt_calc_config();
+	return jt_calc_base() . $cfg['plo5']['slug'] . '/';
+}
+
 /** Devuelve la clave de variante de la pagina actual, o '' si no es una calculadora. */
 function jt_calc_current() {
 	if ( ! is_page() ) return '';
