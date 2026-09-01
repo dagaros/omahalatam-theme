@@ -286,7 +286,9 @@ function jt_hreflang_tags() {
 		}
 	}
 }
-add_action( 'wp_head', 'jt_hreflang_tags', 4 );
+// El tema ya no emite hreflang: desde que las paginas estan vinculadas como
+// traducciones lo hace Polylang, y dos juegos de etiquetas se duplicaban.
+// jt_hreflang_tags() se conserva por si algun dia hay que volver a activarlo.
 
 /**
  * Silencia el hreflang propio de Polylang.
@@ -295,7 +297,21 @@ add_action( 'wp_head', 'jt_hreflang_tags', 4 );
  * propio juego de etiquetas y se duplicaban con las del tema. Se deja solo el
  * del tema, que es el unico que anade x-default.
  */
-add_filter( 'pll_rel_hreflang_fields', '__return_empty_array' );
+/**
+ * Anade x-default al hreflang de Polylang.
+ *
+ * Polylang emite es y pt pero no x-default, que es la etiqueta que le dice a
+ * Google que servir cuando el idioma del visitante no coincide con ninguno.
+ * Se apunta al espanol, que es el idioma principal del sitio.
+ */
+function jt_hreflang_xdefault( $fields ) {
+	$def = function_exists( 'pll_default_language' ) ? pll_default_language( 'slug' ) : 'es';
+	if ( isset( $fields[ $def ] ) ) {
+		$fields['x-default'] = $fields[ $def ];
+	}
+	return $fields;
+}
+add_filter( 'pll_rel_hreflang_fields', 'jt_hreflang_xdefault' );
 
 /**
  * Canal de YouTube de OmahaLatam.
