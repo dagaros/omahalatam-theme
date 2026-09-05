@@ -12,7 +12,7 @@
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-$jt_wa  = 'https://wa.me/573107114689';
+$jt_wa  = 'https://wa.me/573136593208';
 $jt_home = trailingslashit( home_url( '/' ) );
 $jt_en_blog = ( is_home() || is_archive() || is_single() || is_search() );
 
