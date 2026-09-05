@@ -223,7 +223,7 @@ function jt_nav_items() {
  * @return string Número en formato internacional sin signos.
  */
 function jt_whatsapp() {
-	return apply_filters( 'jt_whatsapp_number', '573107114689' );
+	return apply_filters( 'jt_whatsapp_number', '573136593208' );
 }
 
 /**
