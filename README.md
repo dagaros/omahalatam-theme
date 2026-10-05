@@ -3,7 +3,7 @@
 Tema a medida para [omahalatam.com](https://omahalatam.com), el sitio del Coach Jhontra: autoridad de **Omaha 5 Cartas (PLO5)** en Latinoamérica. Dark mode premium, blog editorial y embudo de afiliación a los clubes de Suprema y PPPoker.
 
 Carpeta en el servidor: `wp-content/themes/jhontra-theme/`
-Deploy: auto-deploy de Hostinger desde este repositorio.
+Publicación: la carpeta del tema en el servidor es un clon de `github.com/dagaros/omahalatam-theme` (rama `main`) que despliega Hostinger. Se publica con push a `dagaros main` (+ push a `origin` Widholz de respaldo) y luego se purga LiteSpeed. **No editar el clon** con el Editor de archivos ni subir zip: el siguiente despliegue falla o lo pisa.
 
 ---
 
@@ -37,6 +37,7 @@ jhontra-theme/
 │   └── sidebar-blog.php       Sidebar del blog
 │
 ├── front-page.html            Portada: export estático, servido tal cual
+├── llms.txt                   Guía del sitio para IAs, servida en /llms.txt (inc/cleanup.php)
 ├── front-page.php             Sirve front-page.html (con fallback)
 ├── home.php                   /blog/            → require archive.php
 ├── archive.php                Listado: blog, categorías y búsqueda
@@ -98,7 +99,7 @@ Al final de `assets/css/blog.css` si es del blog, de `layout.css` si es chrome g
 
 ## Pendientes
 
-- [ ] La nav del blog (Inicio · Acerca de · Clubes · Blog · Contacto) no coincide con la de la portada (Método · Jhontra · Clubes · Contenido · Empezar). Unificar.
+- [x] Nav unificada en portada y blog (30/07/2026).
 - [ ] Enlaces de redes sociales en el footer: están en `#`.
 - [ ] Páginas legales: Términos, Privacidad y Cookies apuntan a `#`.
 - [ ] Faltan las páginas Acerca de, Suprema, PPPoker y Contacto como páginas reales (hoy son anclas de la portada).

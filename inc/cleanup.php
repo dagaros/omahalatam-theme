@@ -42,3 +42,21 @@ add_filter( 'get_search_form', function () {
         <input type="search" name="s" placeholder="Buscar artículos, manos, clubes…" aria-label="Buscar en el blog" value="' . esc_attr( get_search_query() ) . '" /></div>
         <button type="submit">Buscar</button></form>';
 } );
+
+/* ── /llms.txt ───────────────────────────────────────────────── */
+
+/**
+ * Sirve /llms.txt (guía del sitio para ChatGPT, Claude, Perplexity…) desde
+ * el llms.txt del tema. Así se publica con el tema, sin tocar la raíz del
+ * hosting. Para cambiar el texto se edita ese archivo.
+ */
+add_action( 'init', function () {
+	$path = wp_parse_url( isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '', PHP_URL_PATH );
+	$file = JT_THEME_DIR . '/llms.txt';
+
+	if ( '/llms.txt' !== $path || ! is_readable( $file ) ) return;
+
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	readfile( $file );
+	exit;
+} );

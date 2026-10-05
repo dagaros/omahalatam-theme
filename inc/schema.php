@@ -21,6 +21,11 @@ function jt_print_schema( array $data ) {
 
 add_action( 'wp_head', function () {
 
+	// Rank Math ya imprime Article, WebSite y Organization. Si está activo, el
+	// del tema sobra: duplicaba entidades con nombres distintos. Esto queda
+	// solo como respaldo por si se desactiva el plugin.
+	if ( defined( 'RANK_MATH_VERSION' ) ) return;
+
 	// La portada estática no pasa por wp_head(); trae su propio schema embebido.
 	if ( is_front_page() ) return;
 
